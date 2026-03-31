@@ -1,54 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head></head>
-<title>Portfolio Landing Page</title>
-<nav>
-    <ul>
-        <li><a href="#Self">Home</a></li>
-        <li><a href="#About">About</a></li>
-        <li><a href="#">Personal Works</a></li>
-    </ul>
-</nav>
+<head>
+    <link rel="stylesheet" href="Portfolio-Homepage.css"
+    <title>Portfolio Landing Page</title>
+
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Portfolio-Homepage.html">About</a></li>
+                <li><a href="Resume.html">Resume</a></li>
+                <li><a href="#Personal-Works">Personal Works</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-    <section id="About">
-        <h1>Short Introduction to be inserted here</h1>
-        <h2>Sub-Heady thingy</h2>
-        <p>What should I put in the Short Introduction thing</p>
-        <p>Should I add another thing here?</p>
-        <h2>2nd thingy?</h2>
-        <p>What should be added here?</p>
-    </section>
-    <section>
-        <h1>Work Experience</h1>
-        <h2>Virtual Assistant - Level9Virtual</h2>
-        <h3><time datetime="2022-09-30">Sep 30, 2022</time> to <time datetime="2023-02-15">Feb 15, 2023</time></h3>
-        <p>insert rotisserie chicken here</p><br>
-        <h2>Quality Assurance Analyst - Intellismart Technology, Inc.</h2>
-        <h3><time datetime="2023-05-23">May 23, 2023</time> to present</h3>
-        <p>insert job descript here</p>
+        <hr>
+    <section class="About-Me">
+        <div class="About-Me-Header">
+            <h1>About Me</h1>
+            <h2>Name</h2>
+            <h3>Position</h3>
+        </div><div class="About-Me-Details">
+            <p>Just a short Introduction about yourself</p>
+            <p>What should be added here?</p>
+            <button class="Resume" onclick="">Resume</button>
+            <button class="Projects" onclick="">Projects</button>
+        </div>
     </section>
 
-    <section>
-        <h1>Skills</h1>
-        <ul>
-            <li>HTML</li>
-            <li>Manual Testing</li>
-            <li>Automation Testing</li>
-            <li>CSS (to be learned)</li>
-            <li>Javascript (to be learned)</li>
-        </ul>
-    </section>
-
-    <section>
-        <h1>Certifications</h1>
-        <ul>
-            <li>Getting Started with Playwright with Typescript - March 5, 2026</li>
-        </ul>
-    </section>
-
-    <section id="Personal Works">
+    <section id="Personal-Works">
+        <h1>REMOVE THIS SECTION AND ADD IT TO ANOTHER FILE</h1>
         <h2>Personal Works</h2>
         <ul>
             <li>Responsive Landing Page</li>
@@ -58,10 +41,14 @@
             <li>React Task Manager</li>
         </ul>
     </section>
+    <hr>
     </main>
+    <footer>
+        <p>Updated Last: <time datetime="2026-03-31">March 31,2026</time></p>
+        <p>Contacts: insert email, contact no.</p>
+        <a class="LinkedIn" href="#">LinkedIn</a>
+        <p>&copy; 2026 by Jolo Abellanosa. All rights reserved.</p>
+    </footer>
 </body>
-<footer>
-    Updated Last: <time datetime="2026-03-24">March 26,2026</time>
-    Contacts: insert email, contact no.
-</footer>
+
 </html>

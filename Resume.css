@@ -1,0 +1,24 @@
+.Experiences {
+    border: 3px solid black;
+}
+
+.Education {
+    border: 3px solid red;
+}
+
+.Skills {
+    border: 3px solid blue;
+}
+
+.Certifications {
+    border: 3px solid green;
+}
+
+.Playwright ul {
+    list-style-type: none;
+}
+
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: blue;
+}

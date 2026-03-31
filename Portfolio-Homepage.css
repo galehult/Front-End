@@ -1,0 +1,24 @@
+.About-Me {
+    border: 3px solid black;
+}
+
+.About-Me-Header {
+    border: 3px solid red;
+    width: 40%;
+    height: 100%;
+}
+
+.About-Me-Details {
+    border: 3px solid blue;
+    width: 60%;
+    height: 100%;
+}
+
+#Personal-Works {
+    border: 3px solid green;
+}
+
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none;
+    color: blue;
+}
