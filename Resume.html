@@ -1,35 +1,40 @@
 <DOCTYPE!>
 <html>
 <head>
-    <link rel="stylesheet" href="Resume.css"
+    <link rel="stylesheet" href="Resume.css">
     <title>Portfolio Landing Page</title>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="Portfolio-Homepage.html">About</a></li>
-                <li><a href="Resume.html">Resume</a></li>
-                <li><a href="#Personal-Works">Personal Works</a></li>
+            <ul class="Nav-List">
+                <li class="Nav-List-Data"><a href="Portfolio-Homepage.html">About</a></li>
+                <li class="Nav-List-Data"><a href="Resume.html">Resume</a></li>
+                <li class="Nav-List-Data"><a href="Personal-Works.html">Personal Works</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <hr>
+        <div class="grid">
         <section class="Experiences">
             <h1>Work Experience</h1>
+            <hr>
+            <div class="Experience-Current">
+                <p>2023-present</p>
+                <h2>Quality Assurance Analyst</h2>
+                <h2>Intellismart Technology, Inc.</h2>
+                <h2>Quezon City, Philippines</h2>
+                <p>Insert Job Description Here</p>
+            </div>
 
-            <p>2023-present</p>
-            <h2>Quality Assurance Analyst</h2>
-            <h2>Intellismart Technology, Inc.</h2>
-            <h2>Quezon City, Philippines</h2>
-            <p>Insert Job Description Here</p>
-
-            <p>2022-2023</p>
-            <h2>Virtual Assistant - Level9Virtual</h2>
-            <h2>Level9Virtual</h2>
-            <h2>Remote Work</h2>
-            <p>Insert Job Description Here</p><br>
+            <div class="Experience-Previous">
+                <p>2022-2023</p>
+                <h2>Virtual Assistant - Level9Virtual</h2>
+                <h2>Level9Virtual</h2>
+                <h2>Remote Work</h2>
+                <p>Insert Job Description Here</p><br>
+            </div>           
         </section>
 
         <section class="Education">
@@ -53,21 +58,26 @@
 
         <section class="Certifications">
             <h1>Certifications</h1>
-            <p>March 5, 2026</p>
-            <p>Getting Started with Playwright with Typescript</p>
-            <br>
-            <ul>
-                <li>
-                    Getting Started with Playwright with Typescript
-                    <div class="Playwright">
-                        <ul>
-                            <li>March 5, 2026</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-
+            <div class="List-Place">
+                <ul class="Date-Certified">
+                    <li>
+                        March 5, 2026
+                        <div>
+                            <ul>
+                                <li>Getting Started with Playwright with Typescript</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </section>
+        </div>
     </main>
+    <hr>
+    <footer>
+        <p>Updated Last: <time datetime="2026-04-01">April 01,2026</time></p>
+        <a class="LinkedIn" href="#">LinkedIn</a>
+        <p>&copy; 2026 by Jolo Abellanosa. All rights reserved.</p>
+    </footer>
 </body>
 </html>
