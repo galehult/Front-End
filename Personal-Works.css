@@ -1,23 +1,107 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: beige;
+    height: 50px;
+    padding: 0px;
+}
+
 body {
     background-image: linear-gradient(beige, aquamarine);
 }
 
 h1 {
     margin-top: 0%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0%;
     margin-bottom: 0%;
+    text-align: center;
 }
 
 .Nav-List {
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    position: absolute;
 }
 
-.Nav-List-Data {
+.Nav-List a {
     padding-left: 5px;
 }
 
 a:link, a:visited, a:hover, a:active, a:focus {
     text-decoration: none;
     color: blue;
+}
+
+.Project-Links:links, .Project-Links:visited, .Project-Links:hover, .Project-Links:active, .Project-Links:focus {
+    color: blue;
+}
+
+.Project-Works-Container {
+    border: 3px solid blue;
+    height: auto;
+    padding-left: 5px;
+}
+
+.Project-List-Container {
+    border: 3px solid maroon;
+    /* padding-left: 5px; */
+    margin: 0% 30%;
+    /* margin-left: 15%;
+    margin-right: 15%; */
+}
+
+.Projects {
+    border: 3px solid crimson;
+    border-radius: 15px;
+    width: 50%;
+    height: auto;
+    margin: 1% 0% 25% 25%;
+    background-color: #b2fba5;
+    padding: 20px 0px;
+}
+
+.Project-Sub-Container-Img {
+    border: 3px solid white;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.Project-Image {
+    border: 3px solid black;
+    width: auto;
+    height: auto;
+    padding-left: 5px;
+    text-align: center;
+    margin: 2px;
+}
+
+.Project-Sub-Container-Head {
+    border: 3px solid rgb(245, 141, 141);
+    width: auto;
+    padding: 2px;
+}
+
+.Project-Heading {
+    border: 3px solid black;
+    border-left: 3px solid #ff4500;
+    width: auto;
+    height: auto;
+    padding-left: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.Project-Body {
+    border: 3px solid royalblue;
+    width: auto;
+    height: auto;
+    padding-left: 5px;
+    text-align: center;
 }
