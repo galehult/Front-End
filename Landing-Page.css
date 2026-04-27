@@ -1,7 +1,7 @@
 *{
-    background-color: royalblue;
+    background-color: #ffffff;
     color: #000000;
-    font-family: calibri;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 h1 {
@@ -25,8 +25,9 @@ header {
 }
 
 .Landing {
-    background-color: royalblue;
+    background-image: linear-gradient(to right, #64a2e8, #f28e41);
     border: 1px solid royalblue;
+    background-size: fill;
     height: 500px;
     width: 100%;
     margin: 0 auto;
@@ -36,7 +37,7 @@ header {
 .landing-card {
     width: 40%;
     height: 60%;
-    border-radius: 10px;
+    border-radius: 20px;
     margin: 2% 0% 0% 2%;
     text-align: center;
     background-color: #ffffff;
@@ -82,12 +83,98 @@ header {
 .landing-body a {
     border: 1px solid green;
     grid-column-start: 2;
+    font-size: 2em;
     height: 25%;
+    width: 50%;
     align-items: right;
-    margin: 20% 10% 30%;
+    margin: 12.5% 20% 30%;
     text-align: center;
-    line-height: 40px;
+    line-height: 60px;
     border-radius: 50px;
     background-image: linear-gradient(to right, #64a2e8, #f28e41);
     text-decoration: none;
+}
+
+.About-Us {
+    border: 1px solid royalblue;
+    display: flex;
+    flex-direction: row;
+    height: 500px;
+}
+
+.About-Us-flex {
+    border: 1px solid salmon;
+    font-size: 3em;
+    width: 100%;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.About-Us-details {
+    margin-left: 2%;
+}
+
+.About-Us-details > p {
+    font-size: 2.5em;
+}
+
+.About-Us-details > hr {
+    width: 95%;
+    margin-left: 0%;
+}
+
+.About-Us-meeting {
+    display: flex;
+    flex-direction: row;
+}
+
+.meeting-img {
+    border: 1px solid green;
+    border-radius: 20px;
+    width: 25%;
+    height: auto;
+    margin-right: 2%;
+}
+
+.meeting-para {
+    border: 1px solid olive;
+    width: 50%;
+    height: auto;
+    font-size: 1.5em;
+}
+
+.Our-Services {
+    background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    height: 750px;
+}
+
+.Our-Services * {
+    background-image: linear-gradient(to right, #64a2e8, #f28e41);
+}
+
+.Our-Services-flex {
+    border: 1px solid salmon;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.Our-Services-header {
+    border: 1px solid red;
+    width: 35%;
+    height: auto;
+    font-size: 3em;
+    text-align: left;
+    /* padding-left: 40px; */
+}
+
+.Our-Services-para {
+    border: 1px solid green;
+    width: 55%;
+    height: auto;
+    margin-left: 5%;
+    font-size: 1.5em;
+    text-align: left;
+    /* padding-left: 40px; */
 }
