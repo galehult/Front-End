@@ -1,0 +1,93 @@
+*{
+    background-color: royalblue;
+    color: #000000;
+    font-family: calibri;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    border-bottom: 1px solid #ffffff;
+}
+
+.nav {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.nav a {
+    padding-left: 5px;
+    position: relative;
+}
+
+.Landing {
+    background-color: royalblue;
+    border: 1px solid royalblue;
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #ffffff;
+}
+
+.landing-card {
+    width: 40%;
+    height: 60%;
+    border-radius: 10px;
+    margin: 2% 0% 0% 2%;
+    text-align: center;
+    background-color: #ffffff;
+    border: 3px solid crimson;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-card  * {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.landing-header h1 {
+    font-size: 3em;
+    border: 1px solid salmon;
+    margin-top: 1%;
+}
+
+.landing-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid olive;
+    margin-top: -3%;
+    height: 50%;
+}
+
+.landing-body p {
+    border: 1px solid red;
+    grid-column-start: 1;
+    border-radius: 0px;
+    height: 50%;
+    width: 75%;
+    font-size: 1.5em;
+    text-align: left;
+    align-items: left;
+    margin-right: 30%;
+    margin-left: 5%;
+    order: 1px;
+}
+
+.landing-body a {
+    border: 1px solid green;
+    grid-column-start: 2;
+    height: 25%;
+    align-items: right;
+    margin: 20% 10% 30%;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    text-decoration: none;
+}
