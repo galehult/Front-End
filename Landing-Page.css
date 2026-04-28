@@ -1,6 +1,6 @@
 *{
     background-color: #ffffff;
-    color: #000000;
+    /* color: #000000; */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -22,6 +22,11 @@ header {
 .nav a {
     padding-left: 5px;
     position: relative;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
 }
 
 .Landing {
@@ -36,43 +41,43 @@ header {
 
 .landing-card {
     width: 40%;
-    height: 60%;
+    height: 55%;
     border-radius: 20px;
     margin: 2% 0% 0% 2%;
     text-align: center;
-    background-color: #ffffff;
-    border: 3px solid crimson;
+    background-color: #eb8f49;
+    /* border: 3px solid crimson; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .landing-card  * {
-    background-color: #ffffff;
+    background-color: transparent;
     border-radius: 10px;
 }
 
 .landing-header h1 {
     font-size: 3em;
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     margin-top: 1%;
 }
 
 .landing-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid olive;
+    /* border: 1px solid olive; */
     margin-top: -3%;
     height: 50%;
 }
 
 .landing-body p {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     grid-column-start: 1;
     border-radius: 0px;
     height: 50%;
     width: 75%;
-    font-size: 1.5em;
+    font-size: 1.25em;
     text-align: left;
     align-items: left;
     margin-right: 30%;
@@ -81,30 +86,47 @@ header {
 }
 
 .landing-body a {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     grid-column-start: 2;
-    font-size: 2em;
+    font-size: 1em;
     height: 25%;
     width: 50%;
     align-items: right;
-    margin: 12.5% 20% 30%;
+    margin: 17.5% 20% 30%;
     text-align: center;
-    line-height: 60px;
+    line-height: 45px;
     border-radius: 50px;
     background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    box-shadow: 5px 5px #b59586;
     text-decoration: none;
+}
+
+.btn:visited {
+    text-decoration: none;
+    background-image: linear-gradient(to right, #64a2e8, #f28e41);
+}
+
+.btn:hover {
+    text-decoration: none;
+    background-image: linear-gradient(to right, #64a2e8);
+}
+
+.btn:active {
+    text-decoration: none;
+    background-image: linear-gradient(to right, #f28e41);
+    box-shadow: 5px 5px #64a2e8;
 }
 
 .About-Us {
     border: 1px solid royalblue;
     display: flex;
     flex-direction: row;
-    height: 500px;
+    height: 600px;
 }
 
 .About-Us-flex {
     border: 1px solid salmon;
-    font-size: 3em;
+    font-size: 2.5em;
     width: 100%;
     text-align: left;
     padding-left: 40px;
@@ -115,7 +137,7 @@ header {
 }
 
 .About-Us-details > p {
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 .About-Us-details > hr {
@@ -138,26 +160,29 @@ header {
 
 .meeting-para {
     border: 1px solid olive;
-    width: 50%;
+    width: 65%;
     height: auto;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .Our-Services {
     background-image: linear-gradient(to right, #64a2e8, #f28e41);
-    height: 750px;
+    height: auto;
+    /* border: 1px solid chartreuse; */
+    padding-left: 1%;
+    padding-bottom: 5%;
 }
 
 .Our-Services * {
-    background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    background-color: transparent;
 }
 
 .Our-Services-flex {
-    border: 1px solid salmon;
+    border: 1px solid crimson;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 5%;
+    padding-top: 2.5%;
 }
 
 .Our-Services-header {
@@ -165,8 +190,7 @@ header {
     width: 35%;
     height: auto;
     font-size: 3em;
-    text-align: left;
-    /* padding-left: 40px; */
+    text-align: center;
 }
 
 .Our-Services-para {
@@ -176,5 +200,72 @@ header {
     margin-left: 5%;
     font-size: 1.5em;
     text-align: left;
-    /* padding-left: 40px; */
+    padding-left: 40px;
+}
+
+.service-card {
+    /* border: 1px solid seashell; */
+    border-radius: 10px;
+    width: 40%;
+    height: auto;
+    margin-top: 1%;
+    background-color: #4C516D;
+    box-shadow: 5px 5px #00416a;
+    color: #ffffff;
+}
+
+.service-card h3 {
+    font-size: 1.75em;
+    margin-top: 1.5%;
+    border: 1px solid salmon;
+}
+
+.service-card p {
+    font-size: 1.25em;
+}
+
+.one {
+    margin-left: 50%;
+    padding: 1.5%;
+}
+
+.two {
+    margin-left: 5%;
+    padding: 1.5%;
+}
+
+.three {
+    margin-left: 50%;
+    padding: 1.5%;
+}
+
+.Why-Us {
+    /* border: 1px solid red; */
+    background-color: #00acf0;
+    margin: 0 auto;
+}
+
+.Why-Us * {
+    background-color: transparent;
+}
+
+.Why-Us-flex {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid crimson;
+}
+
+.Why-Us-header {
+    border: 1px solid saddlebrown;
+    width: 30%;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.Why-Us-body {
+    border: 1px solid yellow;
+}
+
+.OATP {
+    margin-left: 50%;
 }
