@@ -2,34 +2,36 @@
 <html>
     <head>
         <link rel="stylesheet" href="Landing-Page.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Responsive Landing Page</title>
     </head>
     <body>
         <header>
-            <a href="Personal-Works.html"><img src="#"></a>
+            <div class="header-img">
+                <a href="Personal-Works.html"><img src="/free-assets/logo.png"></a>
+            </div>
             <nav>
                 <ul class="nav">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#About-Us">About Us</a></li>
+                    <li><a href="#Our-Services">Services</a></li>
+                    <li><a href="#Meet-Our-Team">Team</a></li>
+                    <li><a href="#Stay-Form">Contact</a></li>
                 </ul>
             </nav>
-            
         </header>
         <main>
-            <div class="Landing">
+            <div id="Landing">
                 <div class="landing-card">
                     <div class="landing-header">
                         <h1>Automate Your Business, Today</h1>
                     </div>
                     <div class="landing-body">
                         <p>Comprehensive HR Process Services for your business needs</p>
-                        <a class="btn" href="#">Contact Us</a>
+                        <a class="btn" href="#Stay-Form">Contact Us</a>
                     </div>
                 </div>
             </div>
-            <div class="About-Us">
+            <div id="About-Us">
                 <div class="About-Us-flex">
                     <h2>About Us</h2>
                 </div>
@@ -38,7 +40,7 @@
                     <hr>
                     <div class="About-Us-meeting">
                         <div class="meeting-img">
-                            <img class="meeting" src="#">
+                            <img class="meeting" src="/free-assets/meeting.jpg">
                         </div>
                         <div class="meeting-para">
                             <p>Our team of experienced experts of their field is dedicated to delivering exceptional results by understanding your challenges and goals, crafting customized strategies, and implementing effective sulutions that propel your business HR needs forward</p>
@@ -46,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="Our-Services">
+            <div id="Our-Services">
                 <div class="Our-Services-flex">
                     <div class="Our-Services-header">
                         <h2>Our Services</h2>
@@ -56,23 +58,20 @@
                     </div>
                 </div>
                 <div class="service-card one">
-                    <img class="card-img" src="#">
                     <h3>Onboarding</h3>
                     <p>Onboarding can now be handled by HRDotNet itself. Input your entire onboarding and let HRDotNet present your onboarding and present HRDotNet to the newly hired team!</p>
                 </div>
                 <div class="service-card two">
-                    <img class="card-img" src="#">
                     <h3>Requests</h3>
                     <p>Employees can now file their Applications through HRDotNet, which can be Reviewed and Approved by their own Reviewer and Approver!</p>
                 </div>
                 <div class="service-card three">
-                    <img class="card-img" src="#">
                     <h3>Timekeeping and Payroll Processing</h3>
                     <p>Timekeeping and Payroll can be processed by HRDotNet itself, lessening time to compute and validate, additionally, the payslip will also be available through the system!</p>
                 </div>
             </div>
 
-            <div class="Why-Us">
+            <div id="Why-Us">
                 <div class="Why-Us-flex">
                     <div class="Why-Us-header">
                         <h2>Why Choose Us</h2>
@@ -82,28 +81,24 @@
                     </div>
                 </div>
                     <div class="OATP">
-                        <img class="oatp-img" src="#">
                         <h4>Onboarding</h4>
                         <p>Onboarding through HRIS</p>
                     </div>
                     <div class="OATP">
-                        <img class="oatp-img" src="#">
                         <h4>Automated Requests</h4>
                         <p>Automates Application Request</p>
                     </div>
                     <div class="OATP">
-                        <img class="oatp-img" src="#">
                         <h4>TK Process</h4>
                         <p>Processes time logs and requests</p>
                     </div>
                     <div class="OATP">
-                        <img class="oatp-img" src="#">
                         <h4>Payroll Process</h4>
                         <p>Processes your Payroll</p>
                     </div>
             </div>
 
-            <div class="Our-Numbers">
+            <div id="Our-Numbers">
                 <div class="Our-Numbers-flex">
                     <div class="Our-Numbers-header">
                         <h2>Our Numbers</h2>
@@ -134,112 +129,138 @@
                 </div>
             </div>
 
-            <div class="industries-group">
+            <div id="industries-group">
                 <div class="industries-heading">
                     <div class="industries-header">
                         <h2>Industries</h2>
                     </div>
                     <div class="industries-para">
-                        <p>Our HRIS firm offers a wide range of professional services to meet the unique needs of business. From Onbording to Payroll Processing, we help business ease up their need Onboarding procedure, Request management, Manual Timekeeping and Payroll Process, and even the employees' Final Pay</p>
+                        <p>Our HRIS firm offers a wide range of professional services to different types of business. From Retail to Service business, our HRIS can be used for all types of organizations.</p>
                     </div>
                 </div>
                 <div class="industries-flex">   
-                    <div class="energy">
-                        <h3>Energy</h3>
-                        <p>Our strategic planning services help business set clear objectives, define strategies, and create action plans for success. We work closely with clients to develop customized strategies that align with their goals and drive sustainable growth</p>
+                    <div class="retail">
+                        <h3>Retail</h3>
+                        <p>Our HRIS solution is designed to support fast-paced retail environments, from small shops to large-scale stores. It streamlines employee scheduling, attendance trackingm and staff record management, ensuring smooth daily operations and better workforce coordination.</p>
                     </div>
-                    <div class="it">
-                        <h3>IT</h3>
-                        <p>Our project management services involve thorough research and analysis to help business understand market trends, competition, and consumer behavior. By providing valuable insights, we assist business in making informed decisions and seizing opportunities for growth</p>
+                    <div class="manufacturing">
+                        <h3>Manufacturing</h3>
+                        <p>For manufacturing companies, our system provides tools to efficiently manage workforce data, monitor shift assignment, and track employee training records. This enables improved productivity, compliance, and operational efficienct on the production floor.</p>
                     </div>
                     <div class="public-services">
-                        <h3>Public Services</h3>
-                        <p>We offer comprehensive financial advisory services to help business manage their finances effectively, optimize performance, and achieve financial stability. Our expert guidance and strategic recommendations empower business to make sound financial decisions</p>
+                        <h3>Services</h3>
+                        <p>Our system is also tailored for service-oriented organization across various industries. It simplifies employee management by organizing perfomance tracking, tas assignments, and payroll information, helping business deliver consistent and hight-quality service.</p>
                     </div>
                 </div>
             </div>
             
-            <div class="Meet-Our-Team">
-                <div class="Team-Header">
-                    <h2>Meet Our Team</h2>
-                    <p>This is the space to describe the team member. Write a brief description of this person's rule and responsibilities, or add a short bio with a background summary. Highlight their skills and explain what makes them an asset to the team.</p>
-                </div>
-                <div class="member twelve">
-                    <img class="member-img" src="#">
-                    <ul>
-                        <li>Zhi Zhi, UI/UX Lead</li>
-                    </ul>
-                    <p>As a seasoned UI/UX designer, Zhi specializes in effective designing, customer experience satisfaction, and performance optimization. With a track record of successful project delivery and client satisfaction, she is committed to driving positive outcomes for our clients</p>
-                </div>
-                <div class="member thirteen">
-                    <img class="member-img" src="#">
-                    <ul>
-                        <li>Ciel Maria, Lead Project Manager</li>
-                    </ul>
-                    <p>Ciel is a skilled project manager with expertise in timeline management, risk assessment, and strategic planning. Her analytical mindset and attention to detail enable her to provide valuable insights and recommendations to support project completion</p>
-                </div>
-                <div class="member fourteen">
-                    <img class="member-img" src="#">
-                    <ul>
-                        <li>Hisvin Outsider, Lead Developer</li>
-                    </ul>
-                    <p>Hisvin brings a creative flair and strategic approach to his teams development skills. With a focus on web desinging, backend development, and strict deliverables, he helps clients enhance their needs, fix bugs found, and achieve perfect process</p>
-                </div>
-                <div class="member fifteen">
-                    <img class="member-img" src="#">
-                    <ul>
-                        <li>Tulip Anne Stevens, Lead QA</li>
-                    </ul>
-                    <p>Tulip brings the necessary assurance to make sure the system is running completely bug free. With amazing focus on both Manual and Automation Testing as well as her expert bug analysis, she makes sure that the system is released on time with no bugs affecting the current released state</p>
-                </div>
-            </div>
-
-            <div class="Testimonials">
-                <div class="Testimonials-Header">
-                    <h2>Testimonials</h2>
-                </div>
-                <div class="grid-testimonial">
-                    <div class="testimonial sixteen">
-                        <img class="testimonial-img" src="#">
-                        <blockquote>HRDotNet exceeded our expectations with innovative sulutions and deep industry knowledge, becoming a true partner in our journey towards automating our Timekeeping and Payrull Processing</blockquote>
-                        <p>Paul Luizer</p>
+            <div id="Meet-Our-Team" class="Meet-Our-Team">
+                <div class="Team-Header-flex">
+                    <div class="Team-Header">
+                        <h2>Meet Our Team</h2>
                     </div>
-                    <div class="testimonial seventeen">
-                        <img class="testimonial-img" src="#">
-                        <blockquote>The expertise and professionalism of the HRDotNet team are unmatched. Their strategic, hands-on guidance has been key to achieving our business goals.</blockquote>
-                        <p>Carlyn Turner</p>
+                    <div class="Team-Body">
+                        <p>This is the space to describe the team members. Write a brief description of this person's rule and responsibilities, or add a short bio with a background summary. Highlight their skills and explain what makes them an asset to the team.</p>
                     </div>
-                    <div class="testimonial eighteen">
-                        <img class="testimonial-img" src="#">
-                        <blockquote>Partnering with HRDotNet was a game-changer, giving us the startegic insight to overcome challenges and seize new opportunities</blockquote>
-                        <p>Michael Breaker</p>
+                </div>
+                <div class="members-flexed">
+                    <div class="members eight">
+                        <div class="members-img">
+                            <img src="/free-assets/Zhi-head.jpg">
+                        </div>
+                        <div class="members-details">
+                            <ul>
+                                <li>Zhi Zhi, UI/UX Lead</li>
+                            </ul>
+                            <p>As a seasoned UI/UX designer, Zhi specializes in effective designing, customer experience satisfaction, and performance optimization. With a track record of successful project delivery and client satisfaction, she is committed to driving positive outcomes for our clients</p>
+                        </div>
                     </div>
-                    <div class="testimonial nineteen">
-                        <img class="testimonial-img" src="#">
-                        <blockquote>I highly recommend HRDotNet. Their commitment to client success and tangible results makes them a valuable partner for any business</blockquote>
-                        <p>Maria Rica Villagra</p>
+                    <div class="members nine">
+                        <div class="members-img">
+                            <img src="/free-assets/Ciel.jpg">
+                        </div>
+                        <div class="members-details">
+                            <ul>
+                                <li>Ciel Maria, Lead Project Manager</li>
+                            </ul>
+                            <p>Ciel is a skilled project manager with expertise in timeline management, risk assessment, and strategic planning. Her analytical mindset and attention to detail enable her to provide valuable insights and recommendations to support project completion</p>    
+                        </div>
+                    </div>
+                    <div class="members ten">
+                        <div class="members-img">
+                            <img src="/free-assets/Hisvin.jpg">
+                        </div>
+                        <div class="members-details">
+                            <ul>
+                                <li>Hisvin Outsider, Lead Developer</li>
+                            </ul>
+                            <p>Hisvin brings a creative flair and strategic approach to his teams development skills. With a focus on web desinging, backend development, and strict deliverables, he helps clients enhance their needs, fix bugs found, and achieve perfect process</p>
+                        </div>
+                    </div>
+                    <div class="members eleven">
+                        <div class="members-img">
+                            <img src="/free-assets/Tulip-head.jpg">
+                        </div>
+                        <div class="members-details">
+                            <ul>
+                                <li>Tulip Anne Stevens, Lead QA</li>
+                            </ul>
+                            <p>Tulip brings the necessary assurance to make sure the system is running completely bug free. With amazing focus on both Manual and Automation Testing as well as her expert bug analysis, she makes sure that the system is released on time with no bugs affecting the current released state</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="Stay-Form">
+            <div id="Testimonials" class="Testimonials">
+                <div class="Testimonials-flex">
+                    <div class="Testimonials-Header">
+                        <h2>Testimonials</h2>
+                    </div>
+                    <div class="grid-testimonial">
+                        <div class="testimonial twelve">
+                            <blockquote>&quot;HRDotNet exceeded our expectations with innovative ways to handle our Timekeeping and Payroll Processing! Now everything is much easier to validate and pay my employees on time.&quot;</blockquote>
+                            <p>Paul Luizer</p>
+                        </div>
+                        <div class="testimonial thirteen">
+                            <blockquote>&quot;HRDotNet eases the process of Timekeeping and Payroll significantly. Now I can manage my multi-company service business efficiently.&quot;</blockquote>
+                            <p>Carlyn Turner</p>
+                        </div>
+                        <div class="testimonial fourteen">
+                            <blockquote>&quot;HRDotNet has been an invaluable partner in streamlining our retail store. Giving us what exactly is needed. There is not doubt I was correct in partnering with the HRDotNet team.&quot;</blockquote>
+                            <p>Michael Breaker</p>
+                        </div>
+                        <div class="testimonial fifteen">
+                            <blockquote>&quot;I highly recommend HRDotNet. Managing my manufacturing firm was always a hassle due to the computation of the workers compensation, now it is much easier thanks to them. Highly recommended for you to try.&quot;</blockquote>
+                            <p>Maria Rica Villagra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Stay-Form" class="Stay-Form">
                 <div class="Stay-Connected">
                     <div class="Stay-Header">
                         <h2>Stay Connected</h2>
                     </div>
-                    <div class="form">
+                    <div class="stay-forms">
                         <form>
-                            <label>First Name*</label>
-                            <input type="input">
-                            <label>Last Name*</label>
-                            <input type="input">
-                            <label>Phone*</label>
-                            <input type="tel">
-                            <label>Email*</label>
-                            <input type="email">
-                            <label>Write a message*</label>
-                            <textarea></textarea>
-                            <input type="submit">
+                            <div class="User-Name">
+                                <div class="User-grid first">
+                                    <label for="first-name">First Name*</label>
+                                    <input type="text" id="first-name" name="first-name" placeholder="John" required>
+                                </div>
+                                <div class="User-grid last">
+                                    <label for="last-name">Last Name*</label>
+                                    <input type="text" id="last-name" name="last-name" placeholder="Doe" required>
+                                </div>
+                            </div>                            
+                            <label for="phone">Phone*</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" required>
+                            <label for="email">Email*</label>
+                            <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                            <label for="message">Write a message*</label>
+                            <textarea id="message" name="message" placeholder="Your message here..." required>Input text here...</textarea>
+                            <input type="submit" id="submit">
                         </form>
                     </div>
                 </div>
@@ -247,10 +268,14 @@
 
         </main>
         <footer>
-            <a href="Responsive-Landing-Page.html"><img src="#"></a>
-            <a class="foot-btn" href="#">Get in Touch</a>
-            <p>&copy; 2026 Jolo Abellanosa, all rights reserved</p>
-            <p>Reference: Business Consulting LAnding Page (Illustrative) on Wix</p>
+            <div class="footer-flex">
+                <div class="footer-img">
+                    <a href="#Landing"><img src="/free-assets/logo.png"></a>   
+                </div>
+                <a class="foot-btn" href="#Stay-Form">Get in Touch</a>
+                <p>&copy; 2026 Jolo Abellanosa, all rights reserved</p>
+                <p>Reference: Business Consulting Landing Page (Illustrative) on Wix</p>
+            </div>  
         </footer>
     </body>
 </html>
