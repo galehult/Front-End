@@ -27,8 +27,9 @@ header {
 }
 
 .header-img {
-    width: 100px;
-    height: 100px;
+    width: 15%;
+    height: auto;
+    /* border: 1px solid black; */
 }
 
 .header-img img {
@@ -51,6 +52,7 @@ header {
     padding: 0;
     position: relative;
     text-decoration: none;
+    color: #000000;
 }
 
 .nav a:visited {
@@ -284,7 +286,7 @@ body {
 #Why-Us {
     background-color: #7c9fcc;
     margin: 0 auto;
-    height: 675px;
+    height: auto;
     padding-left: 1%;
     padding-bottom: 5%;
 }
@@ -783,7 +785,7 @@ input, textarea {
 }
 
 footer {
-    background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    background-image: linear-gradient(to left, #64a2e8, #f28e41);
 }
 
 footer * {
@@ -798,7 +800,7 @@ footer * {
 }
 
 .footer-img {
-    width: 5%;
+    width: 15%;
     height: auto;
     margin: 1% 0 1% 0;
 }

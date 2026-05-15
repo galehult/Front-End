@@ -55,7 +55,7 @@ a:link, a:visited, a:hover, a:active, a:focus {
     justify-content: space-around;
     display: flex;
     flex-direction: column;
-    height: 0%;
+    height: auto;
     /* padding-left: 5px; */
     margin: 0% 30%;
     /* margin-left: 15%;
@@ -66,7 +66,7 @@ a:link, a:visited, a:hover, a:active, a:focus {
     border: 3px solid crimson;
     border-radius: 15px;
     width: 50%;
-    height: 100%;
+    height: auto;
     max-height: 100vh;
     margin: 1% 0% 25% 25%;
     background-color: #b2fba5;
