@@ -65,7 +65,7 @@ function validateManifest(manifest) {
 // console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg"}));
 // console.log(validateManifest({}));
 
-console.log(processManifest({containerId: -1, destination: "   ", weight: 0, unit: "pound", hazmat: 0}));
+// console.log(processManifest({containerId: -1, destination: "   ", weight: 0, unit: "pound", hazmat: 0}));
 
 // console.log(validateManifest({containerId: "Stringcheese"}));
 // console.log(validateManifest({}));
@@ -94,7 +94,7 @@ function processManifest(manifest) {
 // processManifest({})
 
 //Random Quiz Game
-/*const questions = [{
+const questions = [{
     category: "JavaScript Basics",
     question: "Does 'typeof null' return the string object?",
     choices: ["yes", "no", "maybe"],
@@ -152,4 +152,50 @@ function getResults(askedQuestion, selectedAnswer) {
     }
 }
 
-console.log(getResults(askedQuestion, selectedAnswer));*/
+console.log(getResults(askedQuestion, selectedAnswer));
+
+//Records Collections
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+
+function updateRecords(records, id, prop, value) {
+    if (value === "") {
+        delete records[id][prop];
+    } 
+    if (prop !== "tracks" && value !== "") {
+        records[id] = {...id};
+        records[id][prop] = value;
+    } else if (prop === "tracks" && value !== "") {
+        if (!("tracks" in records[id])) {
+            records[id][prop] = [];
+            records[id][prop].push(value);
+        } else {
+            records[id][prop].push(value)
+        }
+    }
+    return records;
+}
+
+// console.log(updateRecords(recordCollection, 5439, "artist", "ABBA"));
+// console.log(updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me"));
+// console.log(updateRecords(recordCollection, 1245, "tracks", "Addicted to Love"));
+// console.log(updateRecords(recordCollection, 2468, "tracks", "Free"));
+// console.log(updateRecords(recordCollection, 2548, "tracks", ""));
+// console.log(updateRecords(recordCollection, 1245, "albumTitle", "Riptide"));
