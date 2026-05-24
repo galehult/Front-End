@@ -1,201 +1,55 @@
-//OBJECTS TO PULL AT HOME
-// MANIFEST
-function normalizeUnits(manifest) {
-    let normalizedManifest = {...manifest};
-    if (normalizedManifest.unit === "lb") {
-        normalizedManifest.unit = "kg";
-        normalizedManifest.weight = normalizedManifest.weight * 0.45;
-    } 
-    return normalizedManifest;
+//LOOP
+//Festival Crowd Flow Simulator
+const morningGates = [
+  { id: "North", capacity: 5, queue: [3, 6, 2, 4] },
+  { id: "East", capacity: 3, queue: [2, 4, 3, 5] },
+  { id: "South", capacity: 4, queue: [1, 2, 3, 1] },
+  { id: "West", capacity: 2, queue: [4, 1, 2, 3] },
+];
+
+const nightGates = [
+  { id: "North", capacity: 4, queue: [6, 2, 5, 1] },
+  { id: "East", capacity: 2, queue: [3, 3, 4, 2] },
+  { id: "South", capacity: 5, queue: [2, 1, 2, 3] },
+  { id: "West", capacity: 3, queue: [5, 2, 1, 4] },
+];
+
+function initializeThroughput(gates) {
+    const summary = {};
+    for (let i = 0; i < gates.length; i++) {
+        summary[gates[i].id] = 0;
+    }
+    return summary
 }
 
-// console.log(normalizeUnits({containerId: 68, destination: "Salinas", weight: "101", unit: "lb", hazmat: true}));
-
-function validateManifest(manifest) {
-    let invalidProperty = {};
-    if (!("containerId" in manifest)) {
-        invalidProperty.containerId = "Missing"
-    } else if (typeof manifest.containerId !== "number" || manifest.containerId === null  || manifest.containerId <=0 || !Number.isInteger(manifest.containerId)) {
-        invalidProperty.containerId = "Invalid"
+function processGateFlow(gate, tickIndex) {
+    let currentTickQueue = gate.queue[tickIndex];
+    let processed = 0;
+    while (currentTickQueue > 0 && processed < gate.capacity) {
+        currentTickQueue--;
+        processed++;
     }
-
-    if (!("destination" in manifest)) {
-        invalidProperty.destination = "Missing";
-    } else if (manifest.destination === null || typeof manifest.destination !== "string" || manifest.destination.trimStart().length === 0 || manifest.destination.trimEnd().length === 0) {
-        invalidProperty.destination = "Invalid";
-    }
-
-    if (!("weight" in manifest)) {
-        invalidProperty.weight = "Missing";
-    } else if (typeof manifest.weight !== "number" || manifest.weight <= 0 || isNaN(manifest.weight)) {
-        invalidProperty.weight = "Invalid";
-    }
-
-    if (!("unit" in manifest)) {
-        invalidProperty.unit = "Missing";
-    } else if (typeof manifest.unit !=="string" || manifest.unit !== "kg" && manifest.unit !== "lb") {
-        invalidProperty.unit = "Invalid";
-    }
-
-    if (!("hazmat" in manifest)) {
-        invalidProperty.hazmat = "Missing";
-    } else if (manifest.hazmat === null || typeof manifest.hazmat !== "boolean") {
-        invalidProperty.hazmat = "Invalid";
-    }
- 
-    return invalidProperty;
+    return {
+        processed,
+        overflow: currentTickQueue
+    };
 }
 
-
-// console.log(validateManifest({ containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false}));
-
-// Invalid Validation
-// console.log(validateManifest({containerId: -2, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false}));
-// console.log(validateManifest({containerId: 1, destination: "    ", weight: 304, unit: "kg", hazmat: false}));
-// console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: -84, unit: "kg", hazmat: false}));
-// console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: 304, unit: "pound", hazmat: false}));
-// console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: "fake"}));
-// console.log(validateManifest({containerId: -1, destination: 548, weight: "304", unit: "keso", hazmat: "true"}));
-
-// Missing Validation
-// console.log(validateManifest({destination: "Santa Cruz", weight: 304, unit: "kg", hazmat: false}));
-// console.log(validateManifest({containerId: 1, weight: 304, unit: "kg", hazmat: false}));
-// console.log(validateManifest({containerId: 1, destination: "Santa Cruz", unit: "kg", hazmat: false}));
-// console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: 304, hazmat: false}));
-// console.log(validateManifest({containerId: 1, destination: "Santa Cruz", weight: 304, unit: "kg"}));
-// console.log(validateManifest({}));
-
-// console.log(processManifest({containerId: -1, destination: "   ", weight: 0, unit: "pound", hazmat: 0}));
-
-// console.log(validateManifest({containerId: "Stringcheese"}));
-// console.log(validateManifest({}));
-// console.log(validateManifest({ destination: "  "}));
-// console.log(validateManifest({ weight: NaN}));
-
-
-function processManifest(manifest) {
-    if (Object.keys(validateManifest(manifest)).length === 0) {
-        normalizeUnits(manifest);
-        let normalUnits = normalizeUnits(manifest);
-        console.log(`Validation success: ${manifest.containerId}`);
-        console.log(`Total weight: ${normalUnits.weight} ${normalUnits.unit}`);
-    } else {
-        let validatedManifest = validateManifest(manifest);
-        console.log(`Validation error: ${manifest.containerId}`);
-        console.log(validatedManifest);
-    }
-
-    return manifest;
+function rerouteOverflow(gates, currentGate, tickIndex, overflowAmount){
+    const currentIndex = gates.indexOf(currentGate);
+    const nextGateIndex = (currentIndex + 1) % gates.length;
+    const nextGate = gates[nextGateIndex];
+    nextGate.queue[tickIndex] += overflowAmount;
+    console.log(`${overflowAmount} attendees rerouted to ${gates[nextGateIndex].id}`);
 }
 
-// processManifest({containerId: 55, destination: "Carmel", weight: 400, unit: "lb", hazmat: false});
-// processManifest({containerId: -88, destination: "Soledad", weight: NaN});
-// processManifest({destination: "Watsonville", hazmat: true});
-// processManifest({})
-
-//Random Quiz Game
-const questions = [{
-    category: "JavaScript Basics",
-    question: "Does 'typeof null' return the string object?",
-    choices: ["yes", "no", "maybe"],
-    answer: "yes"
-},
-{
-    category: "Array Methods",
-    question: "Will the .push() method add an element to the beginning of an array?",
-    choices: ["yes", "no", "maybe"],
-    answer: "no"
-},
-{
-    category: "Software Testing",
-    question: "Is Regression Testing perfomed to ensure that new code changes?",
-    choices: ["yes", "no", "maybe"],
-    answer: "yes"
-},
-{
-    category: "CSS",
-    question: "Is padding the space located outside of an element's border?",
-    choices: ["yes", "no", "maybe"],
-    answer: "no"
-},
-{
-    category: "Database",
-    question: "In MSSQL, can a Primary Key contain a NULL value?",
-    choices: ["yes", "no", "maybe"],
-    answer: "no"
-}];
-
-
-function getRandomQuestion(questions) {
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    return questions[randomIndex];
-}
-
-const askedQuestion = getRandomQuestion(questions);
-const choicesArray = askedQuestion.choices;
-
-
-function getRandomComputerChoice(choicesArray) {
-    let answerIndex = Math.floor(Math.random() * choicesArray.length);
-    let randomAnswer = choicesArray[answerIndex];
-    return randomAnswer;
-}
-
-
-const selectedAnswer = getRandomComputerChoice(choicesArray);
-
-function getResults(askedQuestion, selectedAnswer) {
-    if (selectedAnswer === askedQuestion.answer) {
-        return "The computer's choice is correct!";
-    } else {
-        return `The computer's choice is wrong. The correct answer is: ${askedQuestion.answer}`;
+function handleGateAtTick(gates, gate, tickIndex, throughputSummary) {
+    console.log(`\nProcessing ${gate.id}...`);
+    console.log(`${gate.queue[tickIndex]} attendees arriving.`);
+    let result = processGateFlow(gate, tickIndex);
+    throughputSummary[gate.id] += result.processed;
+    if (result.overflow > 0) {
+        console.log(`Overflow of ${result.overflow} attendees. Rerouting...`);
+        rerouteOverflow(gates, gate, tickIndex, result.overflow);
     }
 }
-
-console.log(getResults(askedQuestion, selectedAnswer));
-
-//Records Collections
-const recordCollection = {
-  2548: {
-    albumTitle: 'Slippery When Wet',
-    artist: 'Bon Jovi',
-    tracks: ['Let It Rock', 'You Give Love a Bad Name']
-  },
-  2468: {
-    albumTitle: '1999',
-    artist: 'Prince',
-    tracks: ['1999', 'Little Red Corvette']
-  },
-  1245: {
-    artist: 'Robert Palmer',
-    tracks: []
-  },
-  5439: {
-    albumTitle: 'ABBA Gold'
-  }
-};
-
-function updateRecords(records, id, prop, value) {
-    if (value === "") {
-        delete records[id][prop];
-    } 
-    if (prop !== "tracks" && value !== "") {
-        records[id] = {...id};
-        records[id][prop] = value;
-    } else if (prop === "tracks" && value !== "") {
-        if (!("tracks" in records[id])) {
-            records[id][prop] = [];
-            records[id][prop].push(value);
-        } else {
-            records[id][prop].push(value)
-        }
-    }
-    return records;
-}
-
-// console.log(updateRecords(recordCollection, 5439, "artist", "ABBA"));
-// console.log(updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me"));
-// console.log(updateRecords(recordCollection, 1245, "tracks", "Addicted to Love"));
-// console.log(updateRecords(recordCollection, 2468, "tracks", "Free"));
-// console.log(updateRecords(recordCollection, 2548, "tracks", ""));
-// console.log(updateRecords(recordCollection, 1245, "albumTitle", "Riptide"));

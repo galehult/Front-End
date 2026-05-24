@@ -1274,7 +1274,9 @@ footer * {
 }
 
 @media (max-width: 768px) {
-
+    header {
+        
+    }
 }
 
 @media (max-width: 992px) {
