@@ -94,69 +94,119 @@ simulateFestival(nightGates, "Night");*/
 }*/
 
 //Proofreading Tool
-function isPalindrome(word) {
-    palindrome = true;
-    for (let i = 0; i < word.length; i++) {
-        if (word[i].toLowerCase() != word[word.length - 1 - i].toLowerCase()) {
-            palindrome = false;
-        }
-    }
-    return palindrome;
+/*function isPalindrome(word) {
+    if (!word) return false;
+    let cleanWord = word.toLowerCase();
+    let reversedWord = cleanWord.split("").reverse().join("");
+    return cleanWord === reversedWord;
 }
 
-console.log(isPalindrome("jucy"));
-console.log(isPalindrome("hannah"));
+function findPalindromeBreaks(words) {
+    let breaks = [];
+    if (!words || words.length === 0) return breaks;
 
-// isPalindrome(word):
-// palindrome - case insensitive .toLowerCase();
-// a for loop to index each character from left to right
-// a for loop to index each character from right to left
-// if left to right === right to left return true
-// else return false
+    let wordsArray = typeof words === "string" ? words.split(" ") : words;
 
-function findPalindromeBreak(words){
-    let nonPalindrome = [];
-    for (i = 0; i < words.length; i++) {
-        const wordIndex = isPalindrome(words[i]);
-        const wordIndexNum = words.indexOf(words[i]);
-        if (wordIndex === false) {
-            nonPalindrome.push(wordIndexNum);
+    for (let i = 0; i < wordsArray.length; i++) {
+        if (!isPalindrome(wordsArray[i])) {
+            breaks.push(i);
         }
     }
-    return nonPalindrome;
+    return breaks;
 }
 
-console.log(findPalindromeBreak(["Racecar", "Hannah", "Rica", "Yow", "Meow"]));
+function findRepeatedPhrases(words, phraseLength) {
+    let result = [];
 
-// findPalindromeBreak(words[]):
-// a for loop using isPalindrome on the words[]
-// if not same characters return an array of indices of words not palindromes
-// return empty if input empty
+    if (!words || words.length <= phraseLength || phraseLength <= 0) {
+        return result;
+    }
 
-function findRepeatedPhrases(words, phraseLength){
-    let returnArray = [];
-    for (i = 0; i < words.length; i++) {
-        if (words.length <= phraseLength) {
-            return returnArray;
-        } else if (words.length > phraseLength) {
+    for (let i = 0; i <= words.length; i++) {
+        let currentPhrase = words.slice(i, i + phraseLength).join(" ");
+        let count = 0;
 
-            returnArray.push()
+        for (let j = 0; j <= words.length - phraseLength; j++) {
+            let scanPhrase = words.slice(j, j + phraseLength).join(" ");
+            if (currentPhrase === scanPhrase) {
+                count++;
+            }
+        }
+        if (count > 1) {
+            result.push(i);
         }
     }
+    return result;
 }
 
-findRepeatedPhrases(words, phraseLength):
-return array of words appeared more than once in the array
-return empty array if phraseLength >= words.length
+function analyzeTexts(texts, phraseLength) {
+    let finalResults = [];
 
-// let repeatedPhrases = findRepeatedPhrases(words, phraseLength);
+    if (!texts || texts.length === 0) {
+        return finalResults;
+    }
 
-// function analyzeTexts(texts, phraseLength){
+    for (let i = 0; i < texts.length; i++) {
+        let currentText = texts[i];
+        let wordsArray = typeof currentText === "string" ? currentText.split(" ") : currentText;
 
-// }
+        let analysisResult = {
+            repeatedPhrases: findRepeatedPhrases(wordsArray, phraseLength),
+            palindromeBreaks: findPalindromeBreaks(wordsArray)
+        }
+        finalResults.push(analysisResult);
+    }
+    return finalResults;
+}*/
 
-// analyzeTexts(texts, phraseLength):
-// for loop each texts[i]
-// using repeatedPhrases and palindromeBreaks
-// return an array of objects with each repeatedPhrases and palindromeBreaks
-// return empty array if texts is empty
+//Smart Pantry Restocker
+function parseShipment(rawData) {
+    const shipmentData = [];
+
+    let isStringArray = rawData.every(rawData => typeof rawData === "string");
+
+    for (let i = 0; i < rawData.length; i++) {
+        shipmentData.push(i);
+    }
+    
+    const sku = shipmentData[0];
+    const name = shipmentData[1];
+    const qty = shipmentData[2];
+    const expires = shipmentData[3];
+    const zone = shipmentData[4];
+
+    return {sku: sku, name: name, qty: qty, expires: expires, zone: zone};
+}
+
+// parseShipment(rawData):
+// rawData = array of string
+// returns an array with [{sku, name, qty, expires, zone}]
+
+
+function planRestock(pantry, shipment) {
+
+}
+
+planRestock(pantry, shipment):
+if statement to compare pantry and shipment
+return arrays of action with [{type: "restock" | "discard" | "donate", item}]
+
+function groupByZone(actions) {
+
+}
+
+groupByZone(actions):
+groups action by items zone property
+
+function clonePantry(pantry) {
+
+}
+
+clonePantry(pantry):
+deep copy of pantry
+do not modify original copy
+use const pantryCopy = JSON.parse(JSON.stringify(pantry));
+
+console.log(groupByZone("actions"));
+
+use all functions.
