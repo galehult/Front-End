@@ -160,53 +160,114 @@ function analyzeTexts(texts, phraseLength) {
 }*/
 
 //Smart Pantry Restocker
-function parseShipment(rawData) {
+/*function parseShipment(rawData) {
     const shipmentData = [];
-
     let isStringArray = rawData.every(rawData => typeof rawData === "string");
 
     for (let i = 0; i < rawData.length; i++) {
-        shipmentData.push(i);
+      const splitter = rawData[i].split("|");
+      let count = 0;
+      let processedData = {};
+      if (shipmentData.some(newShipData => newShipData.sku === splitter[0])) {
+        continue
+      }
+      for (let j = 0; j < splitter.length; j++) {
+        if (j === 0) {
+            processedData.sku = splitter[j].trim();
+        }
+        if (j === 1) {
+          processedData.name = splitter[j].trim();
+        }
+        if (j === 2) {
+          processedData.qty = parseInt(splitter[j].trim());
+        }
+        if (j === 3) {
+          processedData.expires = splitter[j].trim();
+        }
+        if (j === 4) {
+            processedData.zone = splitter[j].trim();
+        }
+      }
+      if (!processedData.zone || processedData.zone.trim() === "") {
+        processedData.zone = "general";
+      }
+      shipmentData.push(processedData);
     }
-    
-    const sku = shipmentData[0];
-    const name = shipmentData[1];
-    const qty = shipmentData[2];
-    const expires = shipmentData[3];
-    const zone = shipmentData[4];
-
-    return {sku: sku, name: name, qty: qty, expires: expires, zone: zone};
+    return shipmentData;
 }
 
-// parseShipment(rawData):
-// rawData = array of string
-// returns an array with [{sku, name, qty, expires, zone}]
-
+let shipment = parseShipment(rawData);
 
 function planRestock(pantry, shipment) {
+  const stockAction = [];
+  
+  for (let i = 0; i < shipment.length; i++) {
+    let action = {};
+    let sameValue = false;
 
+    if (shipment[i].qty <= 0) {
+      action.type = "discard"
+    } else {
+      for (const skuValue in pantry) {
+        if (pantry[skuValue].sku === shipment[i].sku) {
+          sameValue = true;
+          action.type = "restock"
+          break
+        } 
+      }
+      if (sameValue === false) {
+        action.type = "donate";
+      }
+    }
+    action.item = shipment[i];
+    stockAction.push(action);
+  }
+  return stockAction;
 }
-
-planRestock(pantry, shipment):
-if statement to compare pantry and shipment
-return arrays of action with [{type: "restock" | "discard" | "donate", item}]
 
 function groupByZone(actions) {
-
+  const groupedZones = {};
+  for (let i = 0; i < actions.length; i++) {
+    let zoneName = actions[i].item.zone;
+      if (!groupedZones[zoneName]) {
+        groupedZones[zoneName] = [];
+      }
+      groupedZones[zoneName].push(actions[i]);
+  }
+  return groupedZones;
 }
-
-groupByZone(actions):
-groups action by items zone property
 
 function clonePantry(pantry) {
+  const pantryCopy = JSON.parse(JSON.stringify(pantry));
 
+  return pantryCopy;
 }
 
-clonePantry(pantry):
-deep copy of pantry
-do not modify original copy
-use const pantryCopy = JSON.parse(JSON.stringify(pantry));
+const rawData = [
+  "sku1, Apples, 4, 2026-01-15, A1",
+  "sku22, Bananas, 0, 2026-02-10, B2",
+  "sku3, Mangoes, 3, 2026-03-01, A1"
+];
 
-console.log(groupByZone("actions"));
 
-use all functions.
+const pantry = [
+  {
+    sku: "sku1",
+    name: "Apples",
+    qty: 5,
+    expires: "2025-12-20",
+    zone: "A1"
+  },
+  {
+    sku: "sku4",
+    name: "Rice",
+    qty: 10,
+    expires: "2027-01-01",
+    zone: "C3"
+  }
+];
+
+const pantryCopy = clonePantry(pantry);
+const shipmentData = parseShipment(rawData);
+const stockAction = planRestock(pantryCopy, shipmentData);
+console.log(groupByZone(stockAction));*/
