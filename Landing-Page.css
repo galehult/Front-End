@@ -19,7 +19,6 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    /* width: 100%; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -29,7 +28,6 @@ header {
 .header-img {
     width: 15%;
     height: auto;
-    /* border: 1px solid black; */
 }
 
 .header-img img {
@@ -156,18 +154,21 @@ body {
 #About-Us {
     display: flex;
     flex-direction: row;
-    height: 600px;
+    height: auto;
+    margin-bottom: 2%;
 }
 
 .About-Us-flex {
-    font-size: 2.5em;
-    width: 100%;
-    text-align: center;
-    padding-left: 40px;
+    font-size: 3em;
+    width: 40%;
+    text-align: left;
+    padding-left: 20px;
+    /* border: 1px solid red; */
 }
 
 .About-Us-details {
-    margin-left: 2%;
+    /* border: 1px solid blue; */
+    width: 60%;
 }
 
 .About-Us-details > p {
@@ -234,19 +235,18 @@ body {
 }
 
 .Our-Services-header {
-    width: 35%;
+    width: 40%;
     height: auto;
     font-size: 3em;
-    text-align: center;
+    text-align: left;
+    padding-left: 20px;
 }
 
 .Our-Services-para {
-    width: 55%;
+    width: 60%;
     height: auto;
-    margin-left: 5%;
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: left;
-    padding-left: 40px;
 }
 
 .service-card {
@@ -301,18 +301,17 @@ body {
 }
 
 .Why-Us-header {
-    width: 35%;
-    text-align: center;
-    font-size: 2.5em;
+    width: 40%;
+    text-align: left;
+    font-size: 3em;
     height: auto;
+    padding-left: 20px;
 }
 
 .Why-Us-body {
-    margin-left: 5%;
-    width: 55%;
+    width: 60%;
     height: auto;
-    font-size: 1.25em;
-    padding: 10px 0 15px 40px;
+    font-size: 2em;
     text-align: left;
 }
 
@@ -352,19 +351,18 @@ body {
 }
 
 .Our-Numbers-header {
-    width: 35%;
+    width: 40%;
     height: auto;
-    font-size: 2.5em;
-    text-align: center;
+    font-size: 3em;
+    text-align: left;
+    padding-left: 20px;
 }
 
 .Our-Numbers-para {
-    width: 55%;
+    width: 60%;
     height: auto;
-    margin-left: 5%;
-    font-size: 1.25em;
+    font-size: 2em;
     text-align: left;
-    padding-left: 40px;
 }
 
 .Our-Numbers-numbers {
@@ -394,23 +392,19 @@ body {
 }
 
 .four {
-    margin-right: 2.5%;
-    margin-bottom: 2.5%;
+    margin: 0 1.25% 1.25% 0;
 }
 
 .five {
-    margin-left: 2.5%;
-    margin-bottom: 2.5%;
+    margin: 0 0 1.25% 1.25%;
 }
 
 .six {
-    margin-right: 2.5%;
-    margin-top: 2.5%;
+    margin: 1.25% 1.25% 0 0;
 }
 
 .seven {
-    margin-left: 2.5%;
-    margin-top: 2.5%;
+    margin: 1.25% 0 0 1.25%;
 }
 
 .grid-numbers {
@@ -434,18 +428,17 @@ body {
 }
 
 .industries-header {
-    width: 35%;
-    text-align: center;
-    font-size: 2.5em;
+    width: 40%;
+    text-align: left;
+    font-size: 3em;
     height: auto;
+    padding-left: 20px;
 }
 
 .industries-para {
-    margin-left: 5%;
-    width: 55%;
+    width: 60%;
     height: auto;
-    font-size: 1.25em;
-    padding: 10px 0 15px 40px;
+    font-size: 2em;
 }
 
 .industries-flex {
@@ -458,9 +451,10 @@ body {
 }
 
 .retail {
-    margin: 5% 2.5% 0 0;
+    margin: 2.5% 1.25% 2.5% 0;
     border-radius: 10px;
     background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    padding: 0 20px;
     box-shadow: 5px 5px #b5978a;
 }
 
@@ -478,9 +472,10 @@ body {
 }
 
 .manufacturing {
-    margin: 5% 2.5% 0 2.5%;
+    margin: 2.5% 1.25% 2.5% 1.25%;
     border-radius: 10px;
     background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    padding: 0 20px;
     box-shadow: 5px 5px #b5978a;
 }
 
@@ -498,9 +493,10 @@ body {
 }
 
 .public-services {
-    margin: 5% 0 0 2.5%;
+    margin: 2.5% 0 2.5% 1.25%;
     border-radius: 10px;
     background-image: linear-gradient(to right, #64a2e8, #f28e41);
+    padding: 0 20px;
     box-shadow: 5px 5px #b5978a;
 }
 
@@ -520,7 +516,7 @@ body {
 #Meet-Our-Team {
     background-color: #ba9784;
     height: auto;
-    padding: 0 0 5% 1%;
+    padding: 0 0 1% 0;
 }
 
 #Meet-Our-Team .Team-Header-flex, #Meet-Our-Team .members-flexed {
@@ -531,7 +527,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-top: 2.5%;
+    padding-top: 2%;
 }
 
 .Team-Header-flex * {
@@ -539,19 +535,18 @@ body {
 }
 
 .Team-Header {
-    width: 35%;
+    width: 40%;
     height: auto;
-    font-size: 2.5em;
-    text-align: center;
+    font-size: 3em;
+    text-align: left;
+    padding-left: 20px;
 }
 
 .Team-Body {
-    width: 55%;
+    width: 60%;
     height: auto;
-    margin-left: 5%;
-    font-size: 1.5em;
+    font-size: 2em;
     text-align: left;
-    padding-left: 40px;
 }
 
 .members-flexed {
@@ -630,14 +625,14 @@ body {
 }
 
 .Testimonials-Header {
-    width: 35%;
+    width: 40%;
     height: auto;
-    font-size: 2.5em;
-    text-align: center;
+    font-size: 3em;
+    text-align: left;
 }
 
 .grid-testimonial {
-    width: 55%;
+    width: 60%;
     height: auto;
     margin-left: 5%;
     display: grid;
@@ -703,14 +698,15 @@ body {
 }
 
 .Stay-Header {
-    width: 35%;
+    width: 40%;
     height: auto;
-    font-size: 2.5em;
-    text-align: center;
+    font-size: 3em;
+    text-align: left;
+    padding-left: 20px;
 }
 
 .stay-forms {
-    width: 90%;
+    width: 60%;
     /* margin: 0 auto; */
     padding: 2.5% 5%;
 }
@@ -1082,42 +1078,16 @@ footer * {
         text-align: left;
     }
 
-    .retail {
-        margin: 2.5% 0 2.5% 0;
+    .retail, .manufacturing, .public-services {
+        margin: 2.5% 0;
         padding-left: 20px;
     }
 
-    .retail h3 {
+    .retail h3, .manufacturing h3, .public-services h3 {
         font-size: 1.50em;
     }
 
-    .retail p {
-        font-size: 1.15em;
-    }
-
-    .manufacturing {
-        margin: 2.5% 0 2.5% 0;
-        padding-left: 20px;
-    }
-
-    .manufacturing h3 {
-        font-size: 1.50em;
-    }
-
-    .manufacturing p {
-        font-size: 1.15em;
-    }
-
-    .public-services {
-        margin: 2.5% 0 2.25% 0;
-        padding-left: 20px;
-    }
-
-    .public-services h3 {
-        font-size: 1.50em;
-    }
-
-    .public-services p {
+    .retail p, .manufacturing p, .public-services p {
         font-size: 1.15em;
     }
 
@@ -1249,7 +1219,6 @@ footer * {
     }
 
     .footer-flex {
-        flex-direction: row;
         margin: 0 auto;
         padding: 0 5px;
     }
@@ -1443,7 +1412,6 @@ footer * {
     }
 
     .Our-Numbers-numbers {
-        border: 1px solid firebrick;
         margin: 0 auto;
         width: 100%;
     }
@@ -1493,12 +1461,481 @@ footer * {
         margin: 0;
         font-size: 1.30em;
     }
+
+    .industries-flex {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .retail, .manufacturing, .public-services {
+        margin: 2.5% 0;
+        padding-left: 20px;
+    }
+
+    .retail h3, .manufacturing h3, .public-services h3 {
+        font-size: 2em;
+    }
+
+    .retail p, .manufacturing p, .public-services p {
+        font-size: 1.30em;
+    }
+
+    .Team-Header-flex {
+        flex-direction: column;
+        align-items: left;
+        justify-content: left;
+    }
+
+    .Team-Header {
+        width: 100%;
+        font-size: 2em;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .Team-Body {
+        width: 100%;
+        margin: 0;
+        font-size: 1.30em;
+        padding-left: 20px;
+    }
+
+    .members-flexed {
+        padding: 0;
+    }
+
+    .members {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .members-img {
+        width: 50%;
+        margin: 0 auto;
+        border-right: 0;
+        box-shadow: 0 5px #00416a;
+    }
+
+    .members-details {
+        width: 100%;
+        padding: 0;
+    }
+
+    .members-details ul {
+        font-size: 2.5em;
+        text-align: center;
+    }
+
+    .members-details p {
+        font-size: 1.30em;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .eight, .nine, .ten, .eleven {
+        margin: 2.5% 0;
+    }
+
+    .Testimonials-flex {
+        flex-direction: column;
+    }
+
+    .Testimonials-Header {
+        width: 100%;
+        font-size: 2em;
+        text-align: left;
+        padding: 20px;
+    }
+
+    .grid-testimonial {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .testimonial {
+        margin: 0;
+        padding-left: 20px;
+    }
+    .testimonial blockquote {
+        padding: 0;
+        font-size: 1.35em;
+    }
+
+    .testimonial p {
+        font-size: 1.35em;
+    }
+
+    .twelve, .thirteen, .fourteen, .fifteen {
+        margin: 2.5% 0;
+    }
+
+    .Stay-Connected {
+        flex-direction: column;
+    }
+
+    .Stay-Header {
+        width: 100%;
+        font-size: 2em;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .footer-flex {
+        margin: 0 auto;
+        padding: 0 5px;
+    }
+
+    .footer-img {
+        width: 35%;
+        margin: 0;
+    }
+
+    .foot-btn {
+        width: 35%;
+    }
 }
 
 @media (max-width: 992px) {
+    .header-img {
+        width: 25%;
+    }
 
+    .nav {
+        margin-top: 8%;
+    }
+    
+    .landing-card {
+        width: 50%;
+    }
+
+    .landing-body {
+        margin: 0 auto;
+    }
+
+    .About-Us-flex {
+        text-align: left;
+        width: 35%;
+        font-size: 2em;
+    }
+
+    .About-Us-details {
+        width: 65%;
+    }
+
+    .About-Us-details > p {
+        font-size: 1.50em;
+    }
+
+    .meeting-img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .meeting-para {
+        width: 50%;
+        padding-left: 20px;
+        font-size: 1.25em;
+    }
+
+    .Our-Services-header {
+        width: 40%;
+        text-align: left;
+        font-size: 2em;
+    }
+
+    .Our-Services-para {
+        width: 60%;
+        margin-left: 0;
+    }
+    
+    .service-card {
+        width: 50%;
+    }
+
+    .service-card h3 {
+        font-size: 2em;
+    }
+
+    .service-card p {
+        font-size: 1.25em;
+    }
+
+    .one, .three {
+        margin: 2% 0 2% 45%;
+    }
+
+    .two {
+        margin: 2% 0 2% 3%;
+    }
+
+    .Why-Us-header {
+        width: 40%;
+        margin-left: 0;
+        font-size: 2em;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .Why-Us-body {
+        width: 60%;
+        margin-left: 0;
+    }
+
+    .Our-Numbers-header {
+        width: 40%;
+        text-align: left;
+    }
+
+    .Our-Numbers-para {
+        width: 60%;
+        margin: 0;
+    }
+
+    .four {
+        margin: 0 1.25% 1.25% 0;
+    }
+
+    .five {
+        margin: 0 0 1.25% 1.25%;
+    }
+
+    .six {
+        margin: 1.25% 1.25% 0 0;
+    }
+
+    .seven {
+        margin: 1.25% 0 0 1.25%
+    }
+
+    .industries-header {
+        width: 40%;
+        text-align: left;
+        padding-left: 20px;
+        font-size: 2em;
+    }
+
+    .industries-para {
+        width: 60%;
+        margin: 0;
+    }
+
+    .retail, .manufacturing, .public-services {
+        margin: 2.5% 2.5%;
+    }
+
+    .retail h3, .manufacturing h3, .public-services h3 {
+        font-size: 2em;
+    }
+
+    .retail p, .manufacturing p, .public-services p {
+        font-size: 1.15em;
+        padding: 0 2px;
+    }
+
+    .Team-Header {
+        width: 40%;
+        font-size: 2em;
+    }
+
+    .Team-Body {
+        width: 60%;
+        margin: 0;
+    }
+
+    .members-img {
+        height: auto;
+    }
+
+    .members-details ul {
+        font-size: 2em;
+    }
+
+    .members-details p {
+        font-size: 1.20em;
+    }
+
+    .Testimonials-Header {
+        width: 40%;
+        font-size: 2em;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    .grid-testimonial {
+        width: 60%;
+    }
+
+    .testimonial {
+        margin: 0;
+    }
+
+    .testimonial blockquote {
+        padding: 0;
+        font-size: 1.10em;
+    }
+
+    .testimonial p {
+        font-size: 1.10em;
+    }
+
+    .twelve {
+        margin: 0 1.25% 1.25% 0;
+    }
+
+    .thirteen {
+        margin: 0 0 1.25% 1.25%;
+    }
+
+    .fourteen {
+        margin: 1.25% 1.25% 0 0;
+    }
+
+    .fifteen {
+        margin: 1.25% 0 0 1.25%;
+    }
+
+    .Stay-Header {
+        font-size: 2em;
+        padding: 20px;
+    }
+
+    .footer-img {
+        width: 25%;
+    }
 }
 
 @media (max-width: 1200px) {
+    .header-img {
+        width: 25%;
+    }
 
+    .nav {
+        margin-top: 8%;
+    }
+
+    .landing-card {
+        width: 45%;
+    }
+
+    .landing-body {
+        margin: 0 auto;
+    }
+
+    .landing-body p {
+        font-size: 1.20em;
+    }
+
+    .landing-body a {
+        margin-top: 12.5%;
+        line-height: 40px;
+    }
+
+    .About-Us-flex {
+        font-size: 2.5em;
+    }
+
+    .About-Us-details > p {
+        font-size: 1.50em;
+    }
+
+    .meeting-img {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .meeting-para {
+        padding-left: 20px;
+        font-size: 1.20em;
+    }
+
+    .Our-Services-header {
+        font-size: 2.50em;
+    }
+
+    .Our-Services-para {
+        font-size: 1.50em;
+    }
+
+    .service-card h3 {
+        font-size: 2em;
+    }
+
+    .service-card p {
+        font-size: 1.20em;
+    }
+
+    .Why-Us-header {
+        font-size: 2.50em;
+    }
+
+    .Why-Us-body {
+        font-size: 1.50em;
+    }
+
+    .Our-Numbers-header {
+        font-size: 2.50em;
+    }
+
+    .Our-Numbers-para {
+        font-size: 1.50em;
+    }
+
+    .industries-header {
+        font-size: 2.50em;
+    }
+
+    .industries-para {
+        font-size: 1.50em;
+    }
+
+    .retail h3, .manufacturing h3, .public-services h3 {
+        font-size: 2em;
+    }
+
+    .retail p, .manufacturing p, .public-services p {
+        font-size: 1.20em;
+    }
+
+    .Team-Header {
+        font-size: 2.50em;
+    }
+
+    .Team-Body {
+        font-size: 1.50em;
+    }
+
+    .members-img {
+        height: auto;
+    }
+
+    .members-details ul {
+        font-size: 2.50em;
+    }
+
+    .members-details p {
+        font-size: 1.30em;
+    }
+
+    .Testimonials-Header {
+        font-size: 2.50em;
+    }
+
+    .testimonial blockquote  {
+        font-size: 1.20em;
+    }
+
+    .testimonial p {
+        font-size: 1.20em;
+    }
+
+    .Stay-Header {
+        font-size: 2.50em;
+    }
+
+    .footer-img {
+        width: 25%;
+    }
 }
