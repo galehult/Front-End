@@ -1,0 +1,274 @@
+/* Storytelling App */
+/* *,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-grey: #1b1b32;
+    --black: #000;
+    --white: #fff;
+    --golden-yellow: #fecc4c;
+    --yellow: #ffcc4c;
+    --gold: #feac32;
+    --orange: #ffac33;
+    --dark-orange: #f89808;
+}
+
+body {
+    background-color: var(--dark-grey);
+    color: var(--white);
+}
+
+h1,
+#result {
+    text-align: center;
+}
+
+h1 {
+    margin: 10px 0 15px;
+}
+
+.story-container {
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    border-style: double;
+    border-width: 14px;
+    border-color: var(--white);
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 760px) {
+    .btn-container {
+        flex-direction: row;
+    }
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    line-height: 30px;
+}
+
+.btn {
+    cursor: pointer;
+    width: 200px;
+    margin: 10px 0 10px 0.5rem;
+    color: var(--black);
+    background-color: var(--gold);
+    background-image: linear-gradient(var(--golden-yellow), var(--orange));
+    border-color: var(--gold);
+    border-width: 3px;
+}
+
+.btn:hover {
+    background-image: linear-gradient(var(--yellow), var(--dark-orange));
+} */
+
+/* Emoji Reactor */
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --light-grey: #efefef;
+  --white: #ffffff;
+  --very-dark-blue: #0a0a23;
+  --light-purple: #a78bfa;
+  --very-light-purple: #c4b5fd;
+  --purple: #8b5cf6;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  color: var(--light-grey);
+  font-family: sans-serif;
+}
+
+main {
+  text-align: center;
+  padding: 10px;
+}
+
+.btn-container,
+button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn-container {
+  flex-direction: column;
+}
+
+.emoji-btn {
+  width: 70%;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--light-purple);
+  background-image: linear-gradient(
+    to bottom,
+    var(--very-light-purple),
+    var(--light-purple)
+  );
+  border: 3px solid var(--purple);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .emoji-btn {
+    width: 30%;
+  }
+}
+
+.emoji-btn:hover {
+  background-color: var(--purple);
+  background-image: none;
+}
+
+.title {
+  margin-top: 15px;
+  font-size: 2rem;
+}
+
+.description {
+  font-size: 1.4rem;
+  margin: 20px 0;
+} */
+
+/* Favorite Icon Toggler */
+/* *, *::before, *::after   {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#main-list {
+    text-align: center;
+    padding: 10px;
+}
+
+#list-container {
+    margin: 0 auto;
+    border: 1px solid red;
+    width: 50%;
+    height: auto;
+    padding: 10% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    justify-content: space-evenly;
+}
+
+.header {
+    font-size: 2.25em;
+    padding: 5px;
+}
+
+.list-name {
+    font-size: 1.75em;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    list-style: none;
+    width: 30%;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.favorite-icon {
+    font-size: 1em;
+    margin-left: 20px;
+    appearance: none;
+    text-align: right;
+    background-color: transparent;
+    align-items: right;
+    border: none;
+    cursor: pointer;
+}
+
+.filled {
+    font-variant-numeric: tabular-nums;
+    color: red;
+} */
+
+/* Music Instrument Filter */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grey: #0a0a23;
+  --white: #ffffff;
+  --yellow: #f1be32;
+}
+
+body {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.select-container {
+  display: block;
+  margin: 25px auto;
+  padding: 8px;
+  border: 4px solid var(--white);
+  border-radius: 4px;
+  width: 200px;
+}
+
+.products-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (min-width: 760px) {
+  .products-container {
+    flex-direction: row;
+  }
+}
+
+.card {
+  background-color: var(--white);
+  color: var(--dark-grey);
+  border: 4px solid var(--yellow);
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+}
