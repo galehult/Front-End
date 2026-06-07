@@ -11,7 +11,7 @@ h1 {
     margin-bottom: 0%;
 }
 
-.container {
+.main-card {
     border: 3px solid black;
     display: flex;
     flex-direction: row;
