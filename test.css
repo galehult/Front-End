@@ -40,7 +40,7 @@ html, body {
 }
 
 .input-container {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     border-radius: 10px;
     height: 70px;
     margin: 0 auto;
@@ -52,7 +52,6 @@ html, body {
 }
 
 #todo-add {
-    border: 1px solid cyan;
     height: 30px;
     width: 5%;
     margin-left: 10px;
@@ -61,7 +60,7 @@ html, body {
 .todo-input {
     width: 95%;
     border: none;
-    border-radius: 10px;;
+    border-radius: 10px;
     font-size: 20px;
     background-color: transparent;
     padding-left: 15px;
@@ -73,7 +72,7 @@ html, body {
 }
 
 .todo-container {
-    border: 1px solid violet;
+    /* border: 1px solid violet; */
     background-color: snow;
     margin-top: 2.5%;
     border-radius: 10px;
@@ -81,14 +80,29 @@ html, body {
 }
 
 .todo-items {
-    /* border: 1px solid blue; */
     border-bottom: 1px solid gainsboro;
     height: 70px;
     margin: 0 auto;
     display: flex;
+    align-items: center;
     background-color: snow;
     margin-bottom: 2.5%;
 }
+
+.todo-complete {
+    height: 30px;
+    width: 5%;
+    margin-left: 10px;
+}
+
+.todo-striken {
+    width: 95%;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    padding-left: 15px;
+} 
 
 .filters-flex {
     display: flex;
