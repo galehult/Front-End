@@ -1,69 +1,36 @@
-const toDoList = [];
-const inputToDo = document.querySelector(".todo-input");
-const addToDo = document.getElementById("todo-add");
-const toDoContainer = document.querySelector(".todo-list-container");
+const calorieCounter = document.getElementById("calorie-counter");
+const budgetNumberInput = document.getElementById("budget");
+const entryDropdown = document.getElementById("entry-dropdown");
+const addEntryButton = document.getElementById("add-entry");
+const clearButton = document.getElementById("clear");
+const output = document.getElementById("output")
+let isError = false;
 
+function cleanInputString(str) {
+    const regex = /[+-\s]/g;
+    return str.replace(regex, "");
+}
 
-function renderToDo() {
-    toDoContainer.innerHTML = "";
-    toDoList.forEach((list) => {
-        const newDiv = document.createElement("div");
-        const newRadio = document.createElement("input");
-        const readOnlyInput = document.createElement("input")
-        const spanItems = document.querySelector(".span-total-items");
-        let toDoCount = toDoList.length;
+function isInvalidInput(str) {
+    const regex = /\d+e\d+/i;
+    return str.match(regex);
+}
 
-        newDiv.classList.add("todo-items");
+function addEntry() {
+    const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length+1;
+    const HTMLString = `
+    <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+    <input type="text" id="${entryDropdown.value}-${entryNumber}-name" placeholder="Name" />
+    <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
+    <input type="number" min="0" id="${entryDropdown.value}-${entryNumber}-calories" placeholder="Calories" />`;
+    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
+}
 
-        newRadio.type = "radio";
-        newRadio.name = "listed-todo";
-        newRadio.classList.add("todo-complete");
+function getCaloriesFromInputs(list) {
+    let calories = 0;
 
-        readOnlyInput.type = "input";
-        readOnlyInput.name = "readonly-striken";
-        readOnlyInput.classList.add("todo-input");
-        readOnlyInput.readOnly = true;
+    for()
+}
 
-        toDoContainer.appendChild(newDiv);
-        newDiv.appendChild(newRadio);
-        newDiv.appendChild(readOnlyInput);
-
-        readOnlyInput.value = `${list.toDo}`;
-        spanItems.textContent = `${toDoCount}`;
-});
-};
-
-addToDo.addEventListener("click", (event) => {
-    let newToDo = {};
-
-    newToDo.toDo = inputToDo.value;
-    newToDo.isCompleted = false;
-    toDoList.push(newToDo);
-    addToDo.checked = false;
-    inputToDo.value = "";
-    renderToDo();
-});
-
-
-inputToDo.addEventListener("keydown", (event) => {
-    let newToDo = {};
-
-    if (event.key === "Enter") {
-        newToDo.toDo = inputToDo.value;
-        newToDo.isCompleted = false;
-        toDoList.push(newToDo);
-        addToDo.checked = false;
-        inputToDo.value = "";
-        renderToDo();
-    }
-});
-
-const toDoComplete = document.querySelector(".todo-complete");
-const readOnlyInput = document.querySelector(".todo-striken");
-
-toDoComplete.addEventListener("click", (event) => {
-    toDoList.forEach((completed) => {
-        toDoList.completed.isCompleted = true;
-        readOnlyInput.completed.value.style.textDecoration = "line-through";
-    });
-});
+addEntryButton.addEventListener("click", addEntry);

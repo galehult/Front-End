@@ -1,119 +1,87 @@
-* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+  --light-grey: #f5f6f7;
+  --dark-blue: #0a0a23;
+  --fcc-blue: #1b1b32;
+  --light-yellow: #fecc4c;
+  --dark-yellow: #feac32;
+  --light-pink: #ffadad;
+  --dark-red: #850000;
+  --light-green: #acd157;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: #f2f2f2;
-    position: relative;
-    overflow-x: hidden;
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  background-color: var(--fcc-blue);
+  color: var(--light-grey);
 }
 
-#img-header {
-    object-fit: cover;
-    width: 100vw;
-    height: 300px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+h1 {
+  text-align: center;
 }
 
-.todo-card {
-    max-width: 540px;
-    margin: 70px auto 0 auto;
-    position: relative;
-    z-index: 2;
-    text-align: left;;
-    padding: 0 15px;
+.container {
+  width: 90%;
+  max-width: 680px;
 }
 
-.todo-card h1 {
-    margin-bottom: 25px;
-    letter-spacing: 12px;
-    color: white;
+h1,
+.container,
+.output {
+  margin: 20px auto;
+}
+
+label,
+legend {
+  font-weight: bold;
 }
 
 .input-container {
-    /* border: 1px solid blue; */
-    border-radius: 10px;
-    height: 70px;
-    margin: 0 auto;
-    display: flex;
-    background-color: snow;
-    margin-bottom: 2.5%;
-    display: flex;
-    align-items:  center;
+  display: flex;
+  flex-direction: column;
 }
 
-#todo-add {
-    height: 30px;
-    width: 5%;
-    margin-left: 10px;
+button {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: var(--light-yellow);
+  border: 2px solid var(--dark-yellow);
 }
 
-.todo-input {
-    width: 95%;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    background-color: transparent;
-    padding-left: 15px;
+button,
+input,
+select {
+  min-height: 24px;
+  color: var(--dark-blue);
 }
 
-.todo-input:focus {
-    outline: none;
-    box-shadow: none;
+fieldset,
+label,
+button,
+input,
+select {
+  margin-bottom: 10px;
 }
 
-.todo-container {
-    /* border: 1px solid violet; */
-    background-color: snow;
-    margin-top: 2.5%;
-    border-radius: 10px;
-    padding: 0 5px;
+.output {
+  border: 2px solid var(--light-grey);
+  padding: 10px;
+  text-align: center;
 }
 
-.todo-items {
-    border-bottom: 1px solid gainsboro;
-    height: 70px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    background-color: snow;
-    margin-bottom: 2.5%;
+.hide {
+  display: none;
 }
 
-.todo-complete {
-    height: 30px;
-    width: 5%;
-    margin-left: 10px;
+.output span {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-.todo-striken {
-    width: 95%;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    background-color: transparent;
-    padding-left: 15px;
-} 
-
-.filters-flex {
-    display: flex;
-    justify-content: space-evenly;
-    font-size: 15px;
+.surplus {
+  color: var(--light-pink);
 }
 
-.filter-btn {
-    margin: 0 5px;
-    border: none;
-    font-size: 15px;
-    cursor: pointer;
-    background-color: transparent;
+.deficit {
+  color: var(--light-green);
 }
