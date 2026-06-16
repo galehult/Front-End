@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 160" width="100%" height="100%">
+  <defs>
+    <!-- Deep Gradient Definitions to mimic the rich, highly detailed organic depth of the glass & liquid -->
+    <linearGradient id="glassStemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14191A" />
+      <stop offset="50%" stop-color="#2D3538" />
+      <stop offset="100%" stop-color="#0F1213" />
+    </linearGradient>
+
+    <linearGradient id="wineLiquidGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#661422" />
+      <stop offset="40%" stop-color="#400A13" />
+      <stop offset="100%" stop-color="#210308" />
+    </linearGradient>
+
+    <linearGradient id="cheeseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082" />
+      <stop offset="60%" stop-color="#FFCA28" />
+      <stop offset="100%" stop-color="#FFA000" />
+    </linearGradient>
+
+    <!-- Professional Typography Layout CSS -->
+    <style>
+      .bg-clear { fill: none; }
+      .wine-dark { fill: url(#glassStemGrad); }
+      .wine-burgundy { fill: url(#wineLiquidGrad); }
+      .wine-accent { fill: #E63946; opacity: 0.18; }
+      .cheese-body { fill: url(#cheeseGrad); }
+      .cheese-shadow { fill: #B37D00; opacity: 0.25; }
+      .text-primary { fill: #222C35; font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; }
+      .text-highlight { fill: #51121C; font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; }
+      .text-sub { fill: #475569; font-family: 'Lucida Sans', 'Segoe UI', sans-serif; font-weight: 700; letter-spacing: 2px; }
+    </style>
+    
+    <filter id="subtle-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- BRAND ICON GRAPHIC (Left-aligned, highly descriptive curves) -->
+  <g transform="translate(18, -3)">
+    <!-- 1. The Sculpted Outer Profile of the Wide Wine Glass Bowl & Elegant Stem -->
+    <path d="M 40,15 C 38,40 33,65 52,82 L 52,118 C 45,123 38,124 38,126 L 72,126 C 72,124 65,123 58,118 L 58,82 C 77,65 72,40 70,15 C 70,15 78,25 78,48 C 78,72 63,86 55,89 L 55,118 L 68,120 L 68,124 L 42,124 L 42,120 L 55,118 L 55,89 C 47,86 32,72 32,48 C 32,25 40,15 40,15 Z" class="wine-dark" />
+    
+    <!-- 2. Volumetric Fluid Reservoir (Deep Burgundy Filled Hearty Base) -->
+    <path d="M 34.5,42 C 34.5,68 43,81 55,81 C 67,81 75.5,68 75.5,42 C 65,49 45,35 34.5,42 Z" class="wine-burgundy" filter="url(#subtle-glow)" />
+    
+    <!-- Micro Highlights & Tiny Carbonation Bubbles for Organic Fidelity -->
+    <path d="M 36,46 C 45,41 52,51 61,45 C 66,42 71,48 74.5,43 C 74,56 66,78 55,78 C 44,78 36,56 36,46 Z" class="wine-accent" />
+    <circle cx="39" cy="54" r="1.5" fill="#FFF" opacity="0.3" />
+    <circle cx="43" cy="65" r="2.2" fill="#FFF" opacity="0.15" />
+    <circle cx="71" cy="58" r="1.2" fill="#FFF" opacity="0.2" />
+
+    <!-- 3. Precise Triangular Cheese Wedge Component Layered Inside -->
+    <g transform="translate(42, 34)">
+      <!-- Drop shadow underneath the wedge for pop structure -->
+      <polygon points="13,0 26,28 0,28" class="cheese-shadow" transform="translate(1, 1)" />
+      <!-- Golden Triangle Core -->
+      <polygon points="13,0 26,28 0,28" class="cheese-body" />
+      
+      <!-- Individual Hole Embellishments -->
+      <circle cx="8" cy="22" r="2.2" fill="#D48800" opacity="0.4" />
+      <circle cx="17" cy="16" r="1.8" fill="#D48800" opacity="0.4" />
+      <circle cx="12" cy="10" r="1.2" fill="#D48800" opacity="0.3" />
+      <circle cx="20" cy="23" r="1.5" fill="#D48800" opacity="0.4" />
+    </g>
+
+    <!-- 4. Sweeping Dynamic Fluid Swirl Base Highlight Wrap -->
+    <path d="M 28,64 C 31,76 43,85 55,85 C 67,85 79,76 82,64 C 74,74 65,79 55,79 C 45,79 36,74 28,64 Z" fill="#51121C" opacity="0.7" />
+  </g>
+
+  <!-- SUITE TYPOGRAPHY IDENTIFIER SYSTEM -->
+  <g transform="translate(145, 42)">
+    <!-- Primary Branding Token Wordmark: InVINtory -->
+    <text x="0" y="40" font-size="52" class="text-primary" letter-spacing="-0.75">
+      In<tspan class="text-highlight">VIN</tspan>tory
+    </text>
+
+    <!-- Perfectly Scaled and Constrained Secondary Function Descriptor -->
+    <text x="2" y="74" font-size="14.5" class="text-sub">
+      INVENTORY &amp; POS
+    </text>
+  </g>
+</svg>

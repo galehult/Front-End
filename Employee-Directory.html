@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Employee-Directory.css">
+    <script src="Employee-Directory.js" defer></script>
+    <title>Employee Directory</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="count-filter" class="filter flex">
+            <img src="#" id="people-img">
+            <h4><span class="span-number">0</span> Employees</h4>
+            <input type="text" placeholder="Name">
+            <select id="employee-list" name="employee-list">
+                <option>All Employee</option>
+                <option>Regular</option>
+                <option>Probationary</option>
+            </select>
+            <select id="group-by" name="group-by">
+                <option>Position</option>
+                <option>Designation</option>
+            </select>
+            <img src="#" id="list-view">
+            <img src="#" id="grid-view">
+        </div>
+        <div id="employee-list" class="employee-list">
+            <div id="employee-cards" class="employee-cards"></div>
+        </div>
+        <nav aria-label="page navigation">
+            <ul class="pagination">
+                <li><button id="prev-btn" hidden>&#60;</button></li>
+                <li><button id="next-btn" hidden>&#62;</button></li>
+            </ul>
+        </nav>
+    </main>
+    <footer>
+        <div class="footer-flex">
+        <p>&copy; 2026 Jolo Abellanosa, all rights reserved</p>
+        <p>Reference: <a href="https://www.wix.com/website-template/view/html/wh-1080?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%3Fcriteria%3Dsmall%2Bbusiness%2Blanding%2Bpage&tpClick=view_button&esi=0b165ecc-70bf-4998-9a06-4f0a7fabd845">Business Consulting Landing Page (Illustrative) on Wix</a></p>
+        </div>  
+    </footer>
+</body>
+</html>
