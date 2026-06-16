@@ -1,0 +1,40 @@
+:root {
+    --brand-gradient: linear-gradient(to right, #64a2e8, #f28e41);
+    --btn-color: #1d4ed8;
+    --card-bg: #4c516d;
+    --font-serif: 'Cambria', 'Georgia', serif;
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter {
+
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 1200px) {
+    
+}

@@ -5,41 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Employee-Directory.css">
     <script src="Employee-Directory.js" defer></script>
-    <title>Employee Directory</title>
+    <title>FrankyHR</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <div class="header flex">
+            <div class="header-left">
+                <button img="sidebar-control" class="sidebar-btn"><img src="#" alt="sidebar toggle"></button>
+            </div>
+            <div class="header-right">
+                <img class="img profile" src="#" alt="user image">
+            </div>
+        </div>
+        
+
+    </header>
     <main>
-        <div id="count-filter" class="filter flex">
-            <img src="#" id="people-img">
-            <h4><span class="span-number">0</span> Employees</h4>
-            <input type="text" placeholder="Name">
-            <select id="employee-list" name="employee-list">
-                <option>All Employee</option>
-                <option>Regular</option>
-                <option>Probationary</option>
-            </select>
-            <select id="group-by" name="group-by">
-                <option>Position</option>
-                <option>Designation</option>
-            </select>
-            <img src="#" id="list-view">
-            <img src="#" id="grid-view">
+        <div id="count-filter" class="filter-container flex">
+            <div class="filter-left">
+                <img src="#" id="people-img">
+                <h4><span class="span-number">0</span> Employees</h4>
+            </div>
+            <div class="filter-right">
+                <button id="add-employee" class="new-employee btn">New Employee</button>
+                <input type="text" placeholder="Name">
+                <select id="employee-selector" class="selector" name="employee-selector">
+                    <option value="all" selected>All Employee</option>
+                    <option value="regular">Regular</option>
+                    <option value="probationary">Probationary</option>
+                </select>
+                <img src="#" id="list-view">
+                <img src="#" id="grid-view">
+            </div>
+            
         </div>
         <div id="employee-list" class="employee-list">
-            <div id="employee-cards" class="employee-cards"></div>
+            <div id="employee-cards" class="employee-cards">
+                <div id="no-employees" hidden>No Employees found</div>
+            </div>
         </div>
-        <nav aria-label="page navigation">
+        <nav aria-label="page navigation" class="pagination-container flex">
+            <div class="pagination-left">
+                <label for="per-page">Show: </label>
+                <select id="per-page" class="selector">
+                    <option value="0"><span id="page-spanner">0</span></option>
+                    <option value="15" selected>15</option>
+                    <option value="30">30</option>
+                    <option value="45">45</option>
+                </select>
+                <p>Showing <span id="count-start">1-15</span> of <span id="total-count">15</span> </p>
+            </div>
             <ul class="pagination">
                 <li><button id="prev-btn" hidden>&#60;</button></li>
+                <li id="page-numbers" hidden></li>
                 <li><button id="next-btn" hidden>&#62;</button></li>
             </ul>
         </nav>
     </main>
     <footer>
-        <div class="footer-flex">
+        <div class="footer flex">
         <p>&copy; 2026 Jolo Abellanosa, all rights reserved</p>
-        <p>Reference: <a href="https://www.wix.com/website-template/view/html/wh-1080?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%3Fcriteria%3Dsmall%2Bbusiness%2Blanding%2Bpage&tpClick=view_button&esi=0b165ecc-70bf-4998-9a06-4f0a7fabd845">Business Consulting Landing Page (Illustrative) on Wix</a></p>
+        <p>Reference: <a href="https://dribbble.com/shots/14354897-Employee-Directory">Business Consulting Landing Page (Illustrative) on Wix</a></p>
         </div>  
     </footer>
 </body>
