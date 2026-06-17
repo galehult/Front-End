@@ -133,10 +133,10 @@
     </footer>
 
     <div id="new-employee" class="modal new-employee">
-        <form id="employee-form" class="set employee-form">
-            <fieldset id="personal-information" class="personal-information">
+        <form id="employee-form" class="employee-form">
+            <fieldset id="personal-information" class="set personal-information">
                 <legend>Personal Information</legend>
-                <section id="name-info" class="pair name-info">
+                <section id="last-first" class="pair last-first">
                     <section class="group last-name">
                         <label for="last-name">Last Name</label>
                         <input type="text" id="last-name" name="last-name" class="input-field" placeholder="Enter Last Name" required>
@@ -145,6 +145,8 @@
                         <label for="first-name">First Name</label>
                         <input type="text" id="first-name" name="first-name" class="input-field" placeholder="Enter First Name" required>
                     </section>
+                </section>
+                <section id="middle-suffix" class="pair middle-suffix">
                     <section class="group middle-name">
                         <label for="middle-name">Middle Name</label>
                         <input type="text" id="middle-name" name="middle-name" class="input-field" placeholder="Enter Middle Name">
@@ -157,7 +159,7 @@
             </fieldset>
             <fieldset id="job-information" class="set job-information">
                 <legend>Job Information</legend>
-                <section class="pair company-info-code">
+                <section class="pair company-code">
                     <section class="group company">
                         <label for="company">Company</label>
                         <select id="company" class="selector" name="company" required>
@@ -226,7 +228,7 @@
                         </select>
                     </section>
                 </section>
-                <section class="pair level-desig-access">
+                <section class="pair level-desig">
                     <section class="group position-level">
                         <label for="position-level">Position Level</label>
                         <select id="position-level" name="position-level" class="selector" required>
@@ -244,11 +246,10 @@
                             <option value="fed">Front-End Developer</option>
                             <option value="bed">Back-End Developer</option>
                             <option value="supp">Technical Support</option>
+                            <option value="supe">Supervisor</option>
+                            <option value="man">Manager</option>
+                            <option value="exec">Executive</option>
                         </select>
-                    </section>
-                    <section class="group access">
-                        <label for="access-no">Access No</label>
-                        <input type="text" id="access-no" name="access-no" class="input-field" placeholder="Enter Access No" required>
                     </section>
                 </section>
             </fieldset>
@@ -260,7 +261,59 @@
     </div>
 
     <div id="employee-modal" class="modal employee-modal">
-
+        <section class="employee-header">
+            <div class="img-separator">
+                <div class="employee-heading employee-img-details">
+                    <img src="#" alt="Employee IMG" class="img employee-img">
+                </div>
+            </div>
+            <div class="name-information-group">
+                <div class="employee-heading name-details">
+                    <div class="name-format">
+                        <h4>Employee Name:</h4>
+                        <p>DeCheese, Franky III Edcel</p>
+                    </div>
+                    <div class="name-status">
+                        <h4>Employee Status</h4>
+                        <p>Regular</p>
+                    </div>
+                </div>
+                <div class="employee-heading personal-job">
+                    <div class="personal-job code-group">
+                        <div class="code-pair">
+                            <h4>Employee Code</h4>
+                            <p>2507010001</p>
+                        </div>
+                        <div class="code-pair">
+                            <h4>Access No</h4>
+                            <p>2507010001</p>
+                        </div>
+                        <div class="code-pair">
+                            <h4>Department</h4>
+                            <p>FrankyHR</p>
+                        </div>
+                        <div class="code-pair">
+                            <h4>Designation</h4>
+                            <p>Executive</p>
+                        </div>
+                    </div>
+                    <div class="personal-job code-group">
+                        <div class="code-pair">
+                            <h4>Start Date</h4>
+                            <p>July 01, 2025</p>
+                        </div>
+                        <div class="code-pair">
+                            <h4>Regularization Date</h4>
+                            <p>January 01, 2026</p>
+                        </div>
+                        <div class="code-pair">
+                            <h4>End Date</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
     </div>
 </body>
 </html>

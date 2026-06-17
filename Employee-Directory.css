@@ -274,6 +274,107 @@ body {
     border-radius: none;
 }
 
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.new-employee {
+    /* display: none; */
+}
+
+.employee-form {
+    border: 1px solid var(--card-border);
+    background-color: var(--card-bg);
+    margin: 2.5% auto;
+    border-radius: 20px;
+    width: 40%;
+    height: 89%;
+    padding: 10px;
+}
+
+.set {
+    border-radius: 20px;
+}
+
+.personal-information {
+    height: 30%;
+}
+
+.pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group label {
+    font-size: 1.25em;
+}
+
+.group input,
+.group select {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+.company-code,
+.date-status,
+.branch-division,
+.department-section,
+.level-desig {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.last-name, .first-name,
+.middle-name, .suffix,
+.company, .employee-code,
+.start-date, .employment-status,
+.branch, .division,
+.department, .section,
+.position-level, .designation {
+    width: 50%;
+    border-bottom: 1px solid var(--card-border);
+    padding: 7.5px;
+}
+
+.input-field {
+    border: none;
+    border-radius: 10px;
+}
+
+.form-btns {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+
+.cancel, .submit {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+}
+
+.employee-modal {
+    display: none;
+}
+
 @media (max-width: 600px) {
 
 }
