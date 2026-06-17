@@ -10,63 +10,257 @@
 <body>
     <header>
         <div class="header flex">
+
             <div class="header-left">
                 <button img="sidebar-control" class="sidebar-btn"><img src="#" alt="sidebar toggle"></button>
             </div>
+
             <div class="header-right">
-                <img class="img profile" src="#" alt="user image">
+                <img class="img profile-img" src="#">
             </div>
+
         </div>
         
 
     </header>
     <main>
         <div id="count-filter" class="filter-container flex">
+
             <div class="filter-left">
                 <img src="#" id="people-img">
                 <h4><span class="span-number">0</span> Employees</h4>
             </div>
+
             <div class="filter-right">
                 <button id="add-employee" class="new-employee btn">New Employee</button>
-                <input type="text" placeholder="Name">
-                <select id="employee-selector" class="selector" name="employee-selector">
-                    <option value="all" selected>All Employee</option>
+                <input type="text" id="search-field" class="selector" placeholder="Name">
+                <select id="status-selector" class="selector" name="status-selector">
+                    <option value="all" selected>All Employees</option>
                     <option value="regular">Regular</option>
                     <option value="probationary">Probationary</option>
+                    <option value="resigned">Resigned</option>
+                    <option value="terminated">Terminated</option>
+                    <option value="contractual">Contractual</option>
+                    <option value="end-contract">End of Contract</option>
+                    <option value="retired">Retired</option>
+                    <option value="separated">Separated</option>
                 </select>
-                <img src="#" id="list-view">
-                <img src="#" id="grid-view">
+                <img src="#" id="list-view" class="view-selector">
+                <img src="#" id="grid-view" class="view-selector">
             </div>
-            
+
         </div>
+
         <div id="employee-list" class="employee-list">
-            <div id="employee-cards" class="employee-cards">
+            <div id="employee-card-list" class="employee-card-list">
                 <div id="no-employees" hidden>No Employees found</div>
+
+                <div id="employee-card" class="employee-card">
+                    <div class="employee-info">
+                        <img src="/free-assets/Franky.jpg" id="employee-img" class="img employee-img">
+                        <h3 class="employee-name">DeCheese, Franky Edcel</h3>
+                        <p class="employee-title">CEO</p>
+                        <p class="employee-status">Regular</p>
+                    </div>
+
+                    <div class="employee-details">
+                        <section class="emp-sec">
+                            <img src="#" class="img-logo" alt="Employee Code">
+                            <p class="emp-det">2507010001</p>
+                        </section>
+
+                        <section class="emp-sec">
+                            <img src="#" class="img-logo" alt="Access No">
+                            <p class="emp-det">2507010001</p>
+                        </section>
+                    
+                        <section class="emp-sec">
+                            <img src="#" class="img-logo" alt="Position">
+                            <p class="emp-det">Executive</p>
+                        </section>
+                    
+                        <section class="emp-sec">
+                            <img src="#" class="img-logo" alt="Department">
+                            <p class="emp-det">Executive</p>
+                        </section>
+                                            
+                        <section class="emp-sec">
+                            <img src="#" class="img-logo" alt="Date Start">
+                            <p class="emp-det">Jul 1, 2025</p>
+                        </section>
+                 
+                        <section class="emp-sec">
+                            <img src="#" class="img-logo" alt="Regularization Date">
+                            <p class="emp-det">Jan 1, 2026</p>
+                        </section>
+                    </div>
+
+                </div>
+
             </div>
         </div>
+
         <nav aria-label="page navigation" class="pagination-container flex">
+
             <div class="pagination-left">
-                <label for="per-page">Show: </label>
+                <label for="per-page" class="pagination-left-tag">Showing</label>
                 <select id="per-page" class="selector">
                     <option value="0"><span id="page-spanner">0</span></option>
                     <option value="15" selected>15</option>
                     <option value="30">30</option>
                     <option value="45">45</option>
                 </select>
-                <p>Showing <span id="count-start">1-15</span> of <span id="total-count">15</span> </p>
+                <p class="pagination-left-tag">entries</p>
+                <p class="pagination-left-tag">| Showing <span id="count-start">1 to 15</span> of <span id="total-count">15</span> entries found</p>
             </div>
-            <ul class="pagination">
-                <li><button id="prev-btn" hidden>&#60;</button></li>
-                <li id="page-numbers" hidden></li>
-                <li><button id="next-btn" hidden>&#62;</button></li>
-            </ul>
+
+            <div class="pagination-right">
+                <ul class="pagination">
+                    <li><button id="prev-btn" class="page btn">&#60;</button></li>
+                    <li id="page-numbers" ><button id="current-page" class="page btn">1</button></li>
+                    <li><button id="next-btn" class="page btn">&#62;</button></li>
+                </ul>
+            </div>
+
         </nav>
+
     </main>
     <footer>
         <div class="footer flex">
         <p>&copy; 2026 Jolo Abellanosa, all rights reserved</p>
-        <p>Reference: <a href="https://dribbble.com/shots/14354897-Employee-Directory">Business Consulting Landing Page (Illustrative) on Wix</a></p>
+        <p>Reference: <a href="https://dribbble.com/shots/14354897-Employee-Directory">Employee Directory</a></p>
         </div>  
     </footer>
+
+    <div id="new-employee" class="modal new-employee">
+        <form id="employee-form" class="set employee-form">
+            <fieldset id="personal-information" class="personal-information">
+                <legend>Personal Information</legend>
+                <section id="name-info" class="pair name-info">
+                    <section class="group last-name">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" class="input-field" placeholder="Enter Last Name" required>
+                    </section>
+                    <section class="group first-name">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" class="input-field" placeholder="Enter First Name" required>
+                    </section>
+                    <section class="group middle-name">
+                        <label for="middle-name">Middle Name</label>
+                        <input type="text" id="middle-name" name="middle-name" class="input-field" placeholder="Enter Middle Name">
+                    </section>
+                    <section class="group suffix">
+                        <label for="suffix">Suffix</label>
+                        <input type="text" id="suffix" name="suffix" class="input-field" placeholder="Enter Suffix">
+                    </section>
+                </section>
+            </fieldset>
+            <fieldset id="job-information" class="set job-information">
+                <legend>Job Information</legend>
+                <section class="pair company-info-code">
+                    <section class="group company">
+                        <label for="company">Company</label>
+                        <select id="company" class="selector" name="company" required>
+                            <option value="frankyDeCheese" selected>Franky DeCheese Company</option>
+                            <option value="invintory">InVINtory</option>
+                            <option value="recruiterMike">RecruitMike</option>
+                        </select>
+                    </section>
+                    <section class="group employee-code">
+                        <label for="employee-code">Employee Code</label>
+                        <input type="text" id="employee-code" class="input-field" name="employee-code" placeholder="Enter Employee Code" required>
+                    </section>
+                </section>
+                <section class="pair date-status">
+                    <section class="group start-date">
+                        <label for="date-start">Start Date</label>
+                        <input type="date" id="date-start" name="date-start" class="selector" required>
+                    </section>
+                    <section class="group employment-status">
+                        <label for="employment-status">Employment Status</label>
+                        <select id="employment-status" class="selector" name="employment-status" required>
+                            <option value="all" selected>All Employees</option>
+                            <option value="regular">Regular</option>
+                            <option value="probationary">Probationary</option>
+                            <option value="resigned">Resigned</option>
+                            <option value="terminated">Terminated</option>
+                            <option value="contractual">Contractual</option>
+                            <option value="end-contract">End of Contract</option>
+                            <option value="retired">Retired</option>
+                            <option value="separated">Separated</option>
+                        </select>
+                    </section>
+                </section>
+                <section class="pair branch-division">
+                    <section class="group branch">
+                        <label for="branch">Branch</label>
+                        <select id="branch" name="branch" class="selector" required>
+                            <option value="jucy" selected>Jucy Voyager</option>
+                            <option value="crystie">Crystie Miner</option>
+                            <option value="luivi">Luiver Vampire</option>
+                        </select>
+                    </section>
+                    <section class="group division">
+                        <label for="division">Division</label>
+                        <select id="division" name="division" class="selector" required>
+                            <option value="free-man">Free Man</option>
+                            <option value="bonded" selected>Bonded</option>
+                        </select>
+                    </section>
+                </section>
+                <section class="pair department-section">
+                    <section class="group department">
+                        <label for="department">Department</label>
+                        <select id="department" name="department" class="selector" required>
+                            <option value="fhr" selected>FrankyHR</option>
+                            <option value="inv">InVINtory</option>
+                            <option value="rm">RecruitMike</option>
+                        </select>
+                    </section>
+                    <section class="group section">
+                        <label for="section">Section</label>
+                        <select id="section" name="section" class="selector" required>
+                            <option value="fhr" selected>FrankyHR</option>
+                            <option value="inv">InVINtory</option>
+                            <option value="rm">RecruitMike</option>
+                        </select>
+                    </section>
+                </section>
+                <section class="pair level-desig-access">
+                    <section class="group position-level">
+                        <label for="position-level">Position Level</label>
+                        <select id="position-level" name="position-level" class="selector" required>
+                            <option value="rnf" selected>Rank and File</option>
+                            <option value="sup">Supervisory</option>
+                            <option value="man">Managerial</option>
+                            <option value="exec">Executive</option>
+                        </select>
+                    </section>
+                    <section class="group designation">
+                        <label for="designation">Designation</label>
+                        <select id="designation" name="designation" class="selector" required>
+                            <option value="pm" selected>Project Manager</option>
+                            <option value="qa">Quality Assurance</option>
+                            <option value="fed">Front-End Developer</option>
+                            <option value="bed">Back-End Developer</option>
+                            <option value="supp">Technical Support</option>
+                        </select>
+                    </section>
+                    <section class="group access">
+                        <label for="access-no">Access No</label>
+                        <input type="text" id="access-no" name="access-no" class="input-field" placeholder="Enter Access No" required>
+                    </section>
+                </section>
+            </fieldset>
+            <div class="form-btns">
+                <button id="cancel-btn" class="btn cancel">Cancel</button>
+                <button id="submit-btn" class="btn submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="employee-modal" class="modal employee-modal">
+
+    </div>
 </body>
 </html>
