@@ -134,33 +134,36 @@
 
     <div id="new-employee" class="modal new-employee">
         <form id="employee-form" class="employee-form">
+            <div class="form-header">
+                <h3>New Employee</h3>
+                <button class="btn form-x-btn">X</button>
+            </div>
+            <div class="form-scroll-area">
             <fieldset id="personal-information" class="set personal-information">
                 <legend>Personal Information</legend>
-                <section id="last-first" class="pair last-first">
-                    <section class="group last-name">
+                <div class="group">
+                    <section class="last-name">
                         <label for="last-name">Last Name</label>
                         <input type="text" id="last-name" name="last-name" class="input-field" placeholder="Enter Last Name" required>
                     </section>
-                    <section class="group first-name">
+                    <section class="first-name">
                         <label for="first-name">First Name</label>
                         <input type="text" id="first-name" name="first-name" class="input-field" placeholder="Enter First Name" required>
                     </section>
-                </section>
-                <section id="middle-suffix" class="pair middle-suffix">
-                    <section class="group middle-name">
+                    <section class="middle-name">
                         <label for="middle-name">Middle Name</label>
                         <input type="text" id="middle-name" name="middle-name" class="input-field" placeholder="Enter Middle Name">
                     </section>
-                    <section class="group suffix">
+                    <section class="suffix">
                         <label for="suffix">Suffix</label>
                         <input type="text" id="suffix" name="suffix" class="input-field" placeholder="Enter Suffix">
                     </section>
-                </section>
+                </div>
             </fieldset>
             <fieldset id="job-information" class="set job-information">
                 <legend>Job Information</legend>
-                <section class="pair company-code">
-                    <section class="group company">
+                <div class="group">
+                    <section class="company">
                         <label for="company">Company</label>
                         <select id="company" class="selector" name="company" required>
                             <option value="frankyDeCheese" selected>Franky DeCheese Company</option>
@@ -168,17 +171,15 @@
                             <option value="recruiterMike">RecruitMike</option>
                         </select>
                     </section>
-                    <section class="group employee-code">
+                    <section class="employee-code">
                         <label for="employee-code">Employee Code</label>
                         <input type="text" id="employee-code" class="input-field" name="employee-code" placeholder="Enter Employee Code" required>
                     </section>
-                </section>
-                <section class="pair date-status">
-                    <section class="group start-date">
+                    <section class="start-date">
                         <label for="date-start">Start Date</label>
                         <input type="date" id="date-start" name="date-start" class="selector" required>
                     </section>
-                    <section class="group employment-status">
+                    <section class="employment-status">
                         <label for="employment-status">Employment Status</label>
                         <select id="employment-status" class="selector" name="employment-status" required>
                             <option value="all" selected>All Employees</option>
@@ -192,9 +193,7 @@
                             <option value="separated">Separated</option>
                         </select>
                     </section>
-                </section>
-                <section class="pair branch-division">
-                    <section class="group branch">
+                    <section class="branch">
                         <label for="branch">Branch</label>
                         <select id="branch" name="branch" class="selector" required>
                             <option value="jucy" selected>Jucy Voyager</option>
@@ -202,16 +201,14 @@
                             <option value="luivi">Luiver Vampire</option>
                         </select>
                     </section>
-                    <section class="group division">
+                    <section class="division">
                         <label for="division">Division</label>
                         <select id="division" name="division" class="selector" required>
                             <option value="free-man">Free Man</option>
                             <option value="bonded" selected>Bonded</option>
                         </select>
                     </section>
-                </section>
-                <section class="pair department-section">
-                    <section class="group department">
+                    <section class="department">
                         <label for="department">Department</label>
                         <select id="department" name="department" class="selector" required>
                             <option value="fhr" selected>FrankyHR</option>
@@ -219,7 +216,7 @@
                             <option value="rm">RecruitMike</option>
                         </select>
                     </section>
-                    <section class="group section">
+                    <section class="section">
                         <label for="section">Section</label>
                         <select id="section" name="section" class="selector" required>
                             <option value="fhr" selected>FrankyHR</option>
@@ -227,9 +224,7 @@
                             <option value="rm">RecruitMike</option>
                         </select>
                     </section>
-                </section>
-                <section class="pair level-desig">
-                    <section class="group position-level">
+                    <section class="position-level">
                         <label for="position-level">Position Level</label>
                         <select id="position-level" name="position-level" class="selector" required>
                             <option value="rnf" selected>Rank and File</option>
@@ -238,7 +233,7 @@
                             <option value="exec">Executive</option>
                         </select>
                     </section>
-                    <section class="group designation">
+                    <section class="designation">
                         <label for="designation">Designation</label>
                         <select id="designation" name="designation" class="selector" required>
                             <option value="pm" selected>Project Manager</option>
@@ -251,8 +246,10 @@
                             <option value="exec">Executive</option>
                         </select>
                     </section>
-                </section>
+                </div>
+                    
             </fieldset>
+            </div>
             <div class="form-btns">
                 <button id="cancel-btn" class="btn cancel">Cancel</button>
                 <button id="submit-btn" class="btn submit">Submit</button>
@@ -261,59 +258,100 @@
     </div>
 
     <div id="employee-modal" class="modal employee-modal">
-        <section class="employee-header">
-            <div class="img-separator">
-                <div class="employee-heading employee-img-details">
-                    <img src="#" alt="Employee IMG" class="img employee-img">
-                </div>
+        <div id="employee-card-details" class="employee-card-details">
+            <div class="form-header">
+                <h3>Employee Details</h3>
+                <button class="btn form-x-btn">X</button>
             </div>
-            <div class="name-information-group">
-                <div class="employee-heading name-details">
-                    <div class="name-format">
-                        <h4>Employee Name:</h4>
-                        <p>DeCheese, Franky III Edcel</p>
+            <div class="form-scroll-area">
+                <section class="employee-header">
+                        <div class="img-separator">
+                            <div class="employee-img-details">
+                                <img id="emp-rec-img" src="/free-assets/Franky.jpg" alt="Employee IMG" class="img employee-detail-img">
+                            </div>
+                            <div class="name-details">
+                                <div class="name-top">
+                                    <div class="name-format">
+                                        <p id="emp-rec-name" class="employee-name">DeCheese, Franky III Edcel</p>
+                                    </div>
+                                    <div class="name-status">
+                                        <p id="emp-rec-status" class="employee-status">Regular</p>
+                                    </div>
+                                </div>
+                                <div class="detail-mid">
+                                    <div class="code-pair">
+                                        <p class="record-headings">Employee Code</p>
+                                        <p id="emp-rec-code" class="emp-det rec-det">2507010001</p>
+                                    </div>
+                                    <div class="code-pair">
+                                        <p class="record-headings">Department</p>
+                                        <p id="emp-rec-dep" class="emp-det rec-det">FrankyHR</p>
+                                    </div>
+                                    <div class="code-pair">
+                                        <p class="record-headings">Designation</p>
+                                        <p id="emp-rec-desig" class="emp-det rec-det">Executive</p>
+                                    </div>
+                                </div>
+                                <div class="detail-bot">
+                                    <div class="code-pair">
+                                        <p class="record-headings">Start Date</p>
+                                        <p id="emp-rec-start" class="emp-det rec-det">July 01, 2025</p>
+                                    </div>
+                                    <div class="code-pair">
+                                        <p class="record-headings">Regularization Date</p>
+                                        <p id="emp-rec-reg" class="emp-det rec-det">January 01, 2026</p>
+                                    </div>
+                                    <div class="code-pair">
+                                        <p class="record-headings">End Date</p>
+                                        <p id="emp-rec-end" class="emp-det rec-det"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section class="employee-record">
+                    <div class="employee-record-title">
+                        <h4>Job Information</h4>
                     </div>
-                    <div class="name-status">
-                        <h4>Employee Status</h4>
-                        <p>Regular</p>
-                    </div>
-                </div>
-                <div class="employee-heading personal-job">
-                    <div class="personal-job code-group">
-                        <div class="code-pair">
-                            <h4>Employee Code</h4>
-                            <p>2507010001</p>
+                    <div class="employee-record-group">
+                        <div class="pair record-branch">
+                            <p class="record-headings">Branch</p>
+                            <p id="emp-rec-branch" class="emp-det rec-det">FrankyHR</p>
                         </div>
-                        <div class="code-pair">
-                            <h4>Access No</h4>
-                            <p>2507010001</p>
+                        <div class="pair record-division">
+                            <p class="record-headings">Division</p>
+                            <p id="emp-rec-division" class="emp-det rec-det">Executive</p>
                         </div>
-                        <div class="code-pair">
-                            <h4>Department</h4>
-                            <p>FrankyHR</p>
+                        <div class="pair record-section">
+                            <p class="record-headings">Section</p>
+                            <p id="emp-rec-section" class="emp-det rec-det">Executive</p>
                         </div>
-                        <div class="code-pair">
-                            <h4>Designation</h4>
-                            <p>Executive</p>
+                        <div class="pair record-position-level">
+                            <p class="record-headings">Position Level</p>
+                            <p id="emp-rec-position-level" class="emp-det rec-det">Executive</p>
                         </div>
                     </div>
-                    <div class="personal-job code-group">
-                        <div class="code-pair">
-                            <h4>Start Date</h4>
-                            <p>July 01, 2025</p>
+                    <div class="employee-record-group">
+                        <div class="pair">
+                            <p class="record-headings">Employer Type</p>
+                            <p id="emp-rec-emp-type" class="emp-det rec-det"></p>
                         </div>
-                        <div class="code-pair">
-                            <h4>Regularization Date</h4>
-                            <p>January 01, 2026</p>
+                        <div class="pair">
+                            <p class="record-headings">Required to Log</p>
+                            <p id="emp-rec-req-log" class="emp-det rec-det">No</p>
                         </div>
-                        <div class="code-pair">
-                            <h4>End Date</h4>
+                        <div class="pair record-union">
+                            <p class="record-headings">Union Member</p>
+                            <p id="emp-rec-union" class="emp-det rec-det">Non-Union</p>
+                        </div>
+                        <div class="pair record-confi">
+                            <p class="record-headings">Payroll Group</p>
+                            <p id="emp-rec-confi" class="emp-det rec-det">Confi</p>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
-            
-        </section>
+        </div>
     </div>
 </body>
 </html>
