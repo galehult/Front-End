@@ -154,55 +154,60 @@ const totalEmployeeSpan = document.getElementById("total-employee");
 
 totalEmployeeSpan.innerText = employeeRecord.length;
 
-function employeeSelector(employeePosition) {
-    const selectedPosition = 
-        employeePosition === "all"
-            ? employeeRecord
-            : employeeRecord.filter(
-                ({ empStatus }) => empStatus === employeePosition );
+function employeeSelector(stupidInput) {
 
-    const employeeImg = imgSrc ? imgSrc : "/free-assets/logo.jpg";
-    const cardName = suffix ? `${lastName}, ${firstName} ${suffix} ${middleName}` : `${lastName}, ${firstName} ${middleName}`;
-
-    return selectedPosition.map(( {lastName, firstName, suffix, middleName, designation, empStatus, empCode, accessCode, positionLevel, department, startDate, imgSrc}) => {
-        return 
-        `<div class="employee-card">
-            <div class="employee-info">
-                <img src="${employeeImg}" class="img employee-img">
-                <h3 class="employee-name">${cardName}</h3>
-                <p class="employee-title">${employeeRecord.designation}</p>
-                <p class="employee-status">${employeeRecord.empStatus}</p>
-            </div>
-            <div class="employee-details">
-                <section class="emp-sec">
-                    <img src="#" class="img-logo>
-                    <p class="emp-det>${employeeRecord.empCode}</p>
-                </section>
-                <section class="emp-sec">
-                    <img src="#" class="img-logo>
-                    <p class="emp-det>${employeeRecord.accessNo}</p>
-                </section>
-                <section class="emp-sec">
-                    <img src="#" class="img-logo>
-                    <p class="emp-det>${employeeRecord.positionLevel}</p>
-                </section>
-                <section class="emp-sec">
-                    <img src="#" class="img-logo>
-                    <p class="emp-det>${employeeRecord.department}</p>
-                </section>
-                <section class="emp-sec">
-                    <img src="#" class="img-logo>
-                    <p class="emp-det>${employeeRecord.startDate}</p>
-                </section>
-            </div>
-        </div>`
+    return stupidInput.map((emp) => {
+        const {lastName, firstName, suffix, middleName, designation, empStatus, empCode, accessNo, positionLevel, department, startDate, imgSrc } = emp;
+        const employeeImg = imgSrc ? imgSrc : "/free-assets/logo.jpg";
+        const cardName = suffix ? `${lastName}, ${firstName} ${suffix} ${middleName}` : `${lastName}, ${firstName} ${middleName}`;
+            return `<div class="employee-card">
+                <div class="employee-info">
+                    <img src="${employeeImg}" class="img employee-img">
+                    <h3 class="employee-name">${cardName}</h3>
+                    <p class="employee-title">${designation}</p>
+                    <p class="employee-status">${empStatus}</p>
+                </div>
+                <div class="employee-details">
+                    <section class="emp-sec">
+                        <img src="#" class="img-logo>
+                        <p class="emp-det>${empCode}</p>
+                    </section>
+                    <section class="emp-sec">
+                        <img src="#" class="img-logo>
+                        <p class="emp-det>${accessNo}</p>
+                    </section>
+                    <section class="emp-sec">
+                        <img src="#" class="img-logo>
+                        <p class="emp-det>${positionLevel}</p>
+                    </section>
+                    <section class="emp-sec">
+                        <img src="#" class="img-logo>
+                        <p class="emp-det>${department}</p>
+                    </section>
+                    <section class="emp-sec">
+                        <img src="#" class="img-logo>
+                        <p class="emp-det>${startDate}</p>
+                    </section>
+                </div>
+            </div>`
     }).join("");
-}
+};
 
 const selectEmpStatus = document.getElementById("status-selector");
 
 selectEmpStatus.addEventListener("change", (event) => {
     const selectedValue = employeeSelector(event.target.value);
 
-    employeeCardList.innerHTML = employeeSelector(event.target.value);
+    const selectedPosition = selectedValue === "all"
+        ? employeeRecord
+        : employeeRecord.filter(
+            ({ empStatus }) => empStatus.toLowerCase() === employeePosition.toLowerCase() );
+
+    if (selectedPosition === 0) {
+        employeeCardList.innerHTML = "";
+        noEmployees.removeAttribute("hidden");
+    } else {
+        noEmployees.setAttribute("hidden", "true");
+        employeeCardList.innerHTML = employeeSelector(selectedPosition);
+    }
 });
