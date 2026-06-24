@@ -62,9 +62,9 @@ body {
 .img {
     border: 1px solid salmon;
     border-radius:  50%;
-    height: 70px;
-    width: 11%;
-    object-fit: fit;
+    min-height: 70px;
+    min-width: 70px;
+    object-fit: cover;
 }
 
 .btn {
@@ -148,8 +148,9 @@ body {
     margin: 20px;
     padding: 20px;
     display: grid;
-    grid-template-columns:  repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    gap: 5px;
 }
 
 #no-employees {
@@ -173,7 +174,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;
+    text-align: center;
+    height: 60%;
     gap: 10px;
     padding: 5px 20px;
 }
@@ -186,8 +188,8 @@ body {
 }
 
 .employee-img {
-    width: 50%;
-    height: 110px;
+    width: 90px;
+    height: 90px;
 }
 .employee-name {
     font-size: 1.25em;
@@ -199,15 +201,15 @@ body {
 
 .employee-status {
     border: 1px solid var(--card-border);
-    width: 60%;
+    min-width: 150px;
+    width: fit-content;
     height: 40px;
     text-align: center;
-    background-color: #1e8549; /* Remove and add to JS for coloring using if/else for different statuses */
+    background-color: #1e8549; /*Remove and add to JS for coloring using if/else for different statuses*/
     border-radius: 15px;
     padding: 12px 20px;
-    margin: 0;
     color: var(--font-color);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 }
@@ -218,6 +220,9 @@ body {
     flex-direction: column;
     border-radius: 10px;
     background-color: var(--details-bg);
+    height: 40%;
+    width: 80%;
+    margin: 0;
 }
 
 .emp-sec{
@@ -225,14 +230,17 @@ body {
     align-items: center;
     padding: 0 20px;
     font-size: 0.75em;
+    margin: 0;
 }
 
 .img-logo {
     padding-right: 5px;
+    margin: 0;
 }
 
 .emp-det {
     padding-left: 5px;
+    margin: 7.5px;
 }
 
 .pagination-container {
