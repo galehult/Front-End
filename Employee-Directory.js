@@ -154,13 +154,70 @@ const totalEmployeeSpan = document.getElementById("total-employee");
 
 totalEmployeeSpan.innerText = employeeRecord.length;
 
-function employeeSelector(stupidInput) {
+// function employeeSelector(stupidInput) {
 
-    return stupidInput.map((emp) => {
-        const {lastName, firstName, suffix, middleName, designation, empStatus, empCode, accessNo, positionLevel, department, startDate, imgSrc } = emp;
-        const employeeImg = imgSrc ? imgSrc : "/free-assets/logo.jpg";
-        const cardName = suffix ? `${lastName}, ${firstName} ${suffix} ${middleName}` : `${lastName}, ${firstName} ${middleName}`;
-            return `<div class="employee-card">
+//     return stupidInput.map((emp) => {
+//         const {lastName, firstName, suffix, middleName, designation, empStatus, empCode, accessNo, positionLevel, department, startDate, imgSrc } = emp;
+//         const employeeImg = imgSrc ? imgSrc : "/free-assets/logo.jpg";
+//         const cardName = suffix ? `${lastName}, ${firstName} ${suffix} ${middleName}` : `${lastName}, ${firstName} ${middleName}`;
+//             return `<div class="employee-card">
+//                 <div class="employee-info">
+//                     <img src="${employeeImg}" class="img employee-img">
+//                     <h3 class="employee-name">${cardName}</h3>
+//                     <p class="employee-title">${designation}</p>
+//                     <p class="employee-status">${empStatus}</p>
+//                 </div>
+//                 <div class="employee-details">
+//                     <section class="emp-sec">
+//                         <img src="#" class="img-logo>
+//                         <p class="emp-det>${empCode}</p>
+//                     </section>
+//                     <section class="emp-sec">
+//                         <img src="#" class="img-logo>
+//                         <p class="emp-det>${accessNo}</p>
+//                     </section>
+//                     <section class="emp-sec">
+//                         <img src="#" class="img-logo>
+//                         <p class="emp-det>${positionLevel}</p>
+//                     </section>
+//                     <section class="emp-sec">
+//                         <img src="#" class="img-logo>
+//                         <p class="emp-det>${department}</p>
+//                     </section>
+//                     <section class="emp-sec">
+//                         <img src="#" class="img-logo>
+//                         <p class="emp-det>${startDate}</p>
+//                     </section>
+//                 </div>
+//             </div>`
+//     }).join("");
+// };
+
+// const selectEmpStatus = document.getElementById("status-selector");
+
+// selectEmpStatus.addEventListener("change", (event) => {
+//     const selectedValue = employeeSelector(event.target.value);
+
+//     const selectedPosition = selectedValue === "all"
+//         ? employeeRecord
+//         : employeeRecord.filter(
+//             ({ empStatus }) => empStatus.toLowerCase() === employeePosition.toLowerCase() );
+
+//     if (selectedPosition === 0) {
+//         employeeCardList.innerHTML = "";
+//         noEmployees.removeAttribute("hidden");
+//     } else {
+//         noEmployees.setAttribute("hidden", "true");
+//         employeeCardList.innerHTML = employeeSelector(selectedPosition);
+//     }
+// });
+
+function renderEmployee(emp) {
+    const { lastName, firstName, suffix, middleName, designation, empStatus, empCode, accessNo, positionLevel, department, startDate, imgSrc } = emp;
+    const employeeImg = imgSrc || "/free-assets/logo.jpg";
+    const cardName = suffix ? `${lastName}, ${firstName} ${suffix} ${middleName}` : `${lastName}, ${firstName} ${middleName}`;
+
+    return `<div class="employee-card">
                 <div class="employee-info">
                     <img src="${employeeImg}" class="img employee-img">
                     <h3 class="employee-name">${cardName}</h3>
@@ -168,46 +225,31 @@ function employeeSelector(stupidInput) {
                     <p class="employee-status">${empStatus}</p>
                 </div>
                 <div class="employee-details">
-                    <section class="emp-sec">
-                        <img src="#" class="img-logo>
-                        <p class="emp-det>${empCode}</p>
-                    </section>
-                    <section class="emp-sec">
-                        <img src="#" class="img-logo>
-                        <p class="emp-det>${accessNo}</p>
-                    </section>
-                    <section class="emp-sec">
-                        <img src="#" class="img-logo>
-                        <p class="emp-det>${positionLevel}</p>
-                    </section>
-                    <section class="emp-sec">
-                        <img src="#" class="img-logo>
-                        <p class="emp-det>${department}</p>
-                    </section>
-                    <section class="emp-sec">
-                        <img src="#" class="img-logo>
-                        <p class="emp-det>${startDate}</p>
-                    </section>
+                    <section class="emp-sec"><img src="#" class="img-logo"><p class="emp-det">${empCode}</p></section>
+                    <section class="emp-sec"><img src="#" class="img-logo"><p class="emp-det">${accessNo}</p></section>
+                    <section class="emp-sec"><img src="#" class="img-logo"><p class="emp-det">${positionLevel}</p></section>
+                    <section class="emp-sec"><img src="#" class="img-logo"><p class="emp-det">${department}</p></section>
+                    <section class="emp-sec"><img src="#" class="img-logo"><p class="emp-det">${startDate}</p></section>
                 </div>
-            </div>`
-    }).join("");
-};
+            </div>`;
+}
 
 const selectEmpStatus = document.getElementById("status-selector");
 
 selectEmpStatus.addEventListener("change", (event) => {
-    const selectedValue = employeeSelector(event.target.value);
+    const selectedValue = event.target.value;
 
-    const selectedPosition = selectedValue === "all"
+    const filteredEmployees = (selectedValue === "all")
         ? employeeRecord
         : employeeRecord.filter(
-            ({ empStatus }) => empStatus.toLowerCase() === employeePosition.toLowerCase() );
+            ({ empStatus }) => empStatus.toLowerCase() === selectedValue.toLowerCase()
+        );
 
-    if (selectedPosition === 0) {
+    if (filteredEmployees.length === 0) {
         employeeCardList.innerHTML = "";
         noEmployees.removeAttribute("hidden");
     } else {
         noEmployees.setAttribute("hidden", "true");
-        employeeCardList.innerHTML = employeeSelector(selectedPosition);
+        employeeCardList.innerHTML = filteredEmployees.map(renderEmployee).join("");
     }
 });
