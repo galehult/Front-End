@@ -18,4 +18,12 @@ public class DecreasingCounter {
     public void reset() {
         this.value = 0;
     }
+
+    public void changeValue(int modifier) {
+        this.value = this.value - modifier;
+    }
+
+    public int getValue() {
+        return value;
+    }
 }

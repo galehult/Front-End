@@ -1,24 +1,26 @@
 // import java.util.ArrayList;
-// import java.util.Scanner;
+import java.util.Scanner;
 
 public class Practice {
     public static void main(String[] args) {
-        // Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         // ArrayList<String> strings = new ArrayList<>();
 
-        Debt mortgage = new Debt(120000.0, 1.20);
-        mortgage.printBalance();
+        Song garden = new Song("In The Garden", 10910);
 
-        mortgage.waitOneYear();
-        mortgage.printBalance();
+        System.out.println("The song " + garden.name() + " has a length of " + garden.length() + " seconds");
 
-        int years = 0;
+        Film chipmunks = new Film("Alvin and the Chipmunks: The Squekquel", 0);
 
-        while (years < 20) {
-            mortgage.waitOneYear();
-            years = years + 1;
+
+        System.out.println("How old are you?");
+        int age = Integer.valueOf(scanner.nextLine());
+
+        System.out.println();
+        if (age >= chipmunks.ageRating()) {
+            System.out.println("You may watch the film " + chipmunks.name());
+        } else {
+            System.out.println("You may not watch the film " + chipmunks.name());
         }
-
-        mortgage.printBalance();
     }
 }
