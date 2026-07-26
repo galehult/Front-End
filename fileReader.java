@@ -42,13 +42,14 @@ public class fileReader {
         // name finder
 
         ArrayList<String> names = new ArrayList<>();
+        Scanner nameInput = new Scanner(System.in);
 
         System.out.println("Name of the file:");
-        toUse = scanner.nextLine();
+        toUse = nameInput.nextLine();
 
         System.out.println();
         System.out.println("Search for:");
-        String searchName = scanner.nextLine();
+        String searchName = nameInput.nextLine();
 
         try (Scanner nameFinder = new Scanner(Paths.get(toUse))) {
             while (nameFinder.hasNextLine()) {
@@ -68,14 +69,15 @@ public class fileReader {
         }
 
         // Num Finder
+        Scanner boundScanner = new Scanner(System.in);
 
-        System.out.print("Name of the file:");
-        String numFile = scanner.nextLine();
+        System.out.print("Name of the file: ");
+        String numFile = boundScanner.nextLine();
 
         System.out.println("Lower bound? ");
-        int lowBound = Integer.valueOf(scanner.nextLine());
+        int lowBound = Integer.valueOf(boundScanner.nextLine());
         System.out.print("Upper bound? ");
-        int upBound = Integer.valueOf(scanner.nextLine());
+        int upBound = Integer.valueOf(boundScanner.nextLine());
         int counter = 0;
         try (Scanner numReader = new Scanner(Paths.get(numFile))) {
             while (numReader.hasNextLine()) {
@@ -90,5 +92,30 @@ public class fileReader {
         }
 
         System.out.println("Numbers: " + counter);
+
+        // name age separator
+
+        Scanner fileUsage = new Scanner(System.in);
+
+        System.out.println("Name of the file:");
+        String nameAgeRecord = fileUsage.nextLine();
+
+        try (Scanner nameAge = new Scanner(Paths.get(fileUsage))) {
+            while (nameAge.hasNextLine()) {
+                String dataRecord = nameAge.nextLine();
+
+                String[] dataArray = dataRecord.split(",");
+                String name = dataArray[0];
+                int age = Integer.valueOf(dataArray[1]);
+
+                if (age == 1) {
+                    System.out.println(name + ", age: " + age + " year");
+                } else {
+                    System.out.println(name + ", age: " + age + " years");
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }

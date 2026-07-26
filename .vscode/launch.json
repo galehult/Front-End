@@ -9,6 +9,13 @@
             "name": "Practice",
             "request": "launch",
             "mainClass": "Practice",
+            "projectName": "Front-End_9795c935"
+        },
+        {
+            "type": "java",
+            "name": "Practice",
+            "request": "launch",
+            "mainClass": "Practice",
             "projectName": "Front End_b38e61c5"
         },
         {

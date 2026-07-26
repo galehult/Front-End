@@ -5,33 +5,16 @@ import java.nio.file.Paths;
 public class Practice {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ArrayList<String> fileNum = new ArrayList<>();
+        ArrayList<Person> persons = new ArrayList<>();
 
-        System.out.println("Name of the file:");
-        String toUse = scanner.nextLine();
-    
-        System.out.print("Lower bound? ");
-        int lowBound = Integer.valueOf(scanner.nextLine());
-        System.out.print("Upper bound? ");
-        int upBound = Integer.valueOf(scanner.nextLine());
+        String use = "data.txt";
 
-        try (Scanner numReader = new Scanner(Paths.get(toUse))) {
-            while (numReader.hasNextLine()) {
-                String row = numReader.nextLine();
-                fileNum.add(row);
-            }
+        new readRecordsFromFile(use);
 
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+        persons.add(new Person(readRecordsFromFile.getName(), readRecordsFromFile.getAge()));
+
+        for (int i = 0; i < persons.size(); i++) {
+            System.out.println(persons);
         }
-
-        int numCount = 0;
-        for (int i = 0; i < fileNum.size(); i++) {
-            if (Integer.valueOf(fileNum.get(i)) >= lowBound && Integer.valueOf(fileNum.get(i)) <= upBound) {
-                numCount++;
-            }
-        }
-
-        System.out.println("Numbers: " + numCount);
     }
 }
