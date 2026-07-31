@@ -117,5 +117,45 @@ public class fileReader {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+
+        // Game Counter
+        Scanner fileInput = new Scanner(System.in);
+        System.out.println("File:");
+        String gameFile = fileInput.nextLine();
+        System.out.println("Team:");
+        String team = fileInput.nextLine();
+        int gameCount = 0;
+        int win = 0;
+        int loss = 0;
+
+        try (Scanner gameFinder = new Scanner(Paths.get(gameFile))) {
+            while (gameFinder.hasNextLine()) {
+                String match = gameFinder.nextLine();
+                String[] matchRecord = match.split(",");
+
+                if (matchRecord[0].equals(team) || matchRecord[1].equals(team)) {
+                    gameCount++;
+                    if (matchRecord[0].equals(team)) {
+                        if (Integer.valueOf(matchRecord[2]) > Integer.valueOf(matchRecord[3])) {
+                            win++;
+                        } else {
+                            loss++;
+                        }
+                    } else {
+                        if (Integer.valueOf(matchRecord[2]) < Integer.valueOf(matchRecord[3])) {
+                            win++;
+                        } else {
+                            loss++;
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+
+        System.out.println("Games: " + gameCount);
+        System.out.println("Wins: " + win);
+        System.out.println("Losses: " + loss);
     }
 }
