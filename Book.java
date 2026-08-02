@@ -1,27 +1,32 @@
 public class Book {
-    private String author;
     private String title;
-    private int pageCount;
+    private int publicationYear;
 
-    public Book(String author, String name, int pages) {
-        this.author = author;
-        this.title = name;
-        this.pageCount = pages;
+    public Book(String title, int publicationYear) {
+        this.title = title;
+        this.publicationYear = publicationYear;
     }
 
-    public String getAuthor() {
-        return this.author;
-    }
+    public boolean equals(Object compared) {
+        if (this == compared) {
+            return true;
+        }
 
-    public String getName() {
-        return this.title;
-    }
+        if (!(compared instanceof Book)) {
+            return false;
+        }
 
-    public int getPages() {
-        return this.pageCount;
+        Book comparedBook = (Book) compared;
+
+        if (this.title.equals(comparedBook.title) &&
+            this.publicationYear == comparedBook.publicationYear) {
+            return true;
+        }
+
+        return false;
     }
 
     public String toString() {
-        return this.author + ", " + this.title + ", " + this.pageCount + " pages";
+        return "Book title: " + this.title + ", Year Published: " + this.publicationYear;
     }
 }

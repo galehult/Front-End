@@ -1,34 +1,28 @@
 public class Person {
     private String name;
     private int age;
-    private int year;
     private int weight;
     private int height;
-    private Pet pet;
+    private SimpleDate birthday;
 
-    public Person(String name, int age, int year, int height, int weight, Pet pet) {
+    public Person(String name, int height, int weight, SimpleDate birthday) {
         this.name = name;
-        this.age = age;
-        this.year = year;
+        this.age = 9;
         this.height = height;
         this.weight = weight;
-        this.pet = pet;
-    }
-
-    public Person(String name, Pet pet) {
-        this(name, 0, 1996, 0, 0, pet);
+        this.birthday = birthday;
     }
 
     public String toString() {
-        return this.name + ", has a friend called " + this.pet;
+        return this.name + " is " + getAge() + ", and has a weight of " + getWeight() + ", and a height of " + getHeight(); //+ ", has a friend called "; + this.pet;
     }
-
-    // public Person() {
-    //     this("Becca",0,1996, 0, 0);
-    // }
 
     public String getName() {
         return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
     }
 
     public int getWeight() {
@@ -47,15 +41,25 @@ public class Person {
         this.height = height;
     }
 
-    public int getYear() {
-        return this.year;
-    }
+    public boolean equals(Object compared) {
+        if (this == compared) {
+            return true;
+        }
 
-    public void growOlder() {
-        this.age++;
-    }
+        if (!(compared instanceof Person)) {
+            return false;
+        }
 
-    public void setYear(int year) {
-        this.year = year;
+        Person comparedPerson = (Person) compared;
+
+        if (this.name.equals(comparedPerson.name) &&
+            this.age == comparedPerson.age &&
+            this.weight == comparedPerson.weight &&
+            this.height == comparedPerson.height &&
+            this.birthday.equals(comparedPerson.birthday)) {
+                return true;
+        }
+        
+        return false;
     }
 }
