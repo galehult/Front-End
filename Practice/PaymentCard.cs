@@ -12,12 +12,12 @@ public class PaymentCard
         return this.balance;
     }
 
-    public void AddMoney(decimal deposit)
+    public void Deposit(decimal deposit)
     {
         this.balance += deposit;
     }
 
-    public bool TakeMoney(decimal amount)
+    public bool Withdraw(decimal amount)
     {
         if (amount <= this.balance)
         {

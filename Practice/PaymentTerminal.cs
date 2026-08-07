@@ -90,7 +90,7 @@ public class PaymentTerminal
     {
         if (card.GetBalance() >= this.affordablePrice.GetTotal())
         {
-            card.TakeMoney(this.affordablePrice.GetTotal());
+            card.Withdraw(this.affordablePrice.GetTotal());
             this.cardPayments += this.affordablePrice.GetTotal();
             this.affordableMeals--;
             return true;
@@ -104,7 +104,7 @@ public class PaymentTerminal
     {
         if (card.GetBalance() >= this.heartyPrice.GetTotal())
         {
-            card.TakeMoney(this.heartyPrice.GetTotal());
+            card.Withdraw(this.heartyPrice.GetTotal());
             this.cardPayments += this.affordablePrice.GetTotal();
             heartyMeals--;
             return true;
