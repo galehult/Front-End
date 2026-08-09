@@ -1,0 +1,4 @@
+Franky,,DeCheese,III,08/06/2002,175,75
+Mikey,World,Breaker,,31/10/2002,183,84
+Vini,,Outsider,,21/01/2002,170,65
+Jucy,Shanx,Voyager,Jr,08/10/2000,165,67

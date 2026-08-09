@@ -1,10 +1,32 @@
-﻿public class Program
+﻿using System;
+using System.IO;
+public class Program
 {
     public static void Main(string[] args)
     {
         List<Person> person = new List<Person>();
 
-        string output = "y";
+        Console.WriteLine("Are you inputting a file? (y/n)");
+        var output = Console.ReadLine();
+
+        if (output == "y" || output == "Y")
+        {
+            Console.Write("Input file: ");
+            var file = Console.ReadLine();
+
+            string[] newPeople = File.ReadAllLines(file);
+
+            foreach(string[] newPerson in newPeople)
+            {
+                NewPersonFile(person, newPerson);
+            }
+
+            Console.WriteLine("Here are the list of new Persons added from the list:");
+            PrintNames(person);
+        }
+
+        Console.WriteLine("Do you want to add another Person? (y/n)");
+        output = Console.ReadLine();
         while (output == "y" || output == "Y")
         {
             NewPerson(person);
@@ -34,7 +56,7 @@
     public static void NewPerson(List<Person> person)
     {
         Console.Write("Input First Name: ");
-        string firstName = Console.ReadLine();
+        var firstName = Console.ReadLine();
 
         if (firstName == "")
         {
@@ -43,9 +65,9 @@
         }
 
         Console.Write("Input Middle Name: ");
-        string middleName = Console.ReadLine();
+        var middleName = Console.ReadLine();
         Console.Write("Input Last Name: ");
-        string lastName = Console.ReadLine();
+        var lastName = Console.ReadLine();
         
         if (lastName == "")
         {
@@ -54,19 +76,35 @@
         }
         
         Console.Write("Input Suffix: ");
-        string suffix = Console.ReadLine();
+        var suffix = Console.ReadLine();
 
         Console.Write("Input Birthday (dd/MM/yyyy): ");
-        string birthday = Console.ReadLine();
+        var birthday = Console.ReadLine();
         Console.Write("Input height: ");
-        int height = int.Parse(Console.ReadLine());
+        var height = int.Parse(Console.ReadLine());
         Console.Write("Input weight: ");
-        int weight = int.Parse(Console.ReadLine());
+        var weight = int.Parse(Console.ReadLine());
 
         string[] date = birthday.Split("/");
-        int day = Convert.ToInt32(date[0]);
-        int month = Convert.ToInt32(date[1]);
-        int year = Convert.ToInt32(date[2]);
+        var day = Convert.ToInt32(date[0]);
+        var month = Convert.ToInt32(date[1]);
+        var year = Convert.ToInt32(date[2]);
+
+        person.Add(new Person(firstName, middleName, lastName, suffix, new SimpleDate(day, month, year), height, weight));
+    }
+
+    public static void NewPersonFile(List<Person> person, string[] personFile)
+    {
+        var firstName = personFile[0];
+        var middleName = personFile[1];
+        var lastName = personFile[2];
+        var suffix = personFile[3];
+        string[] date = personFile[4].Split("/");
+        var day = Convert.ToInt32(date[0]);
+        var month = Convert.ToInt32(date[1]);
+        var year = Convert.ToInt32(date[2]);
+        var height = Convert.ToInt32(personFile[5]);
+        var weight = Convert.ToInt32(personFile[6]);
 
         person.Add(new Person(firstName, middleName, lastName, suffix, new SimpleDate(day, month, year), height, weight));
     }
@@ -106,7 +144,7 @@
     public static void ToUpdate(List<Person> person)
     {
         Console.Write("Who are updating: ");
-        string who = Console.ReadLine();
+        var who = Console.ReadLine();
         int indexed = GetPerson(person, who);
         if (indexed == -1)
         {
@@ -115,9 +153,9 @@
         }
 
         Console.Write("What are we updating [1 - First Name, 2 - Middle Name, 3 - Last Name, 4 - Suffix, 0 - Nothing]: ");
-        int chosenField = int.Parse(Console.ReadLine());
+        var chosenField = int.Parse(Console.ReadLine());
         Console.Write("Update to: ");
-        string newName = Console.ReadLine();
+        var newName = Console.ReadLine();
         UpdatePerson(person, chosenField, who, newName);
     }
 
