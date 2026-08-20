@@ -190,8 +190,22 @@ StringList.Add("Value");
 Console.WriteLine(StringList);
 
 Stack s = new Stack();
-Console.WriteLine(s.IsEmpty());
-Console.WriteLine(s.Values());
-s.Add("Value");
-Console.WriteLine(s.IsEmpty());
-Console.WriteLine(s.Values());
+// Console.WriteLine(s.IsEmpty());
+// Console.WriteLine($"[{string.Join(", ", s.Values())}]");
+// s.Add("Value");
+// Console.WriteLine(s.IsEmpty());
+// Console.WriteLine($"[{string.Join(", ", s.Values())}]");
+// string taken = s.Take();
+// Console.WriteLine(s.IsEmpty());
+// Console.WriteLine($"[{string.Join(", ", s.Values())}]");
+// Console.WriteLine(taken);
+
+s.Add("1");
+s.Add("2");
+s.Add("3");
+s.Add("4");
+s.Add("5");
+
+while (!s.IsEmpty()) {
+    Console.WriteLine(s.Take());
+}

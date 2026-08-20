@@ -26,4 +26,11 @@ public class Stack
     {
         return this.stack;
     }
+
+    public string Take()
+    {
+        string toTake = this.stack[this.stack.Count() - 1];
+        this.stack.RemoveAt(this.stack.Count() - 1);
+        return toTake;
+    }
 }
