@@ -185,11 +185,11 @@
 //     }
 // }
 
-List<string> StringList = new List<string>();
-StringList.Add("Value");
-Console.WriteLine(StringList);
+// List<string> StringList = new List<string>();
+// StringList.Add("Value");
+// Console.WriteLine(StringList);
 
-Stack s = new Stack();
+// Stack s = new Stack();
 // Console.WriteLine(s.IsEmpty());
 // Console.WriteLine($"[{string.Join(", ", s.Values())}]");
 // s.Add("Value");
@@ -200,12 +200,43 @@ Stack s = new Stack();
 // Console.WriteLine($"[{string.Join(", ", s.Values())}]");
 // Console.WriteLine(taken);
 
-s.Add("1");
-s.Add("2");
-s.Add("3");
-s.Add("4");
-s.Add("5");
+// Person franky = new Person("Franky", "", "De Cheese", "", new SimpleDate(08, 06, 2002), 175, 86);
+// Person mikey = new Person("Mikey", "World", "Breaker", "", new SimpleDate(31, 10, 2002), 180, 90);
+// Person vini = new Person("Vini", "", "Outsider", "III", new SimpleDate(21, 01, 2002), 194, 90);
 
-while (!s.IsEmpty()) {
-    Console.WriteLine(s.Take());
-}
+// AmusementParkRide hurjakuru = new AmusementParkRide("Water Splasher", 180);
+
+// hurjakuru.IsAllowedOn(franky);
+// hurjakuru.IsAllowedOn(mikey);
+// hurjakuru.IsAllowedOn(vini);
+
+// Console.WriteLine(hurjakuru);
+
+// Console.WriteLine(hurjakuru.AverageHeightOfPeopleOnRide());
+
+// SimpleCollection s = new SimpleCollection("characters");
+// Console.WriteLine(s);
+
+// Console.WriteLine();
+
+// s.Add("magneto");
+// Console.WriteLine(s);
+
+// Console.WriteLine();
+
+// s.Add("mystique");
+// Console.WriteLine(s);
+
+// Console.WriteLine();
+
+// s.Add("pheonix");
+// Console.WriteLine(s);
+
+Gift book = new Gift("Harry Potter and the Philosopher's Stone", 2);
+// Console.WriteLine("Gift's name: " + book.GetName());
+// Console.WriteLine("Gift's weight: " + book.GetWeight());
+
+// Console.WriteLine("Gift: " + book);
+Package gifts = new Package();
+gifts.AddGift(book);
+Console.WriteLine(gifts.TotalWeight());
