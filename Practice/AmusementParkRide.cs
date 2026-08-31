@@ -38,6 +38,26 @@ public class AmusementParkRide {
         return 1.0 * sumOfHeights / riding.Count;
     }
 
+    public Person GetTallest()
+    {
+        if (this.riding.Count == 0)
+        {
+            return null;
+        }
+
+        Person returnObject = this.riding[0];
+
+        foreach (Person prs in this.riding)
+        {
+            if (returnObject.GetHeight() < prs.GetHeight())
+            {
+                returnObject = prs;
+            }
+        }
+
+        return returnObject;
+    }
+
     public override string ToString() {
         string printOutput = this.name + ", minimum height requirement: " + this.lowestHeight + ", visitors: " + this.visitors + "\n";
 

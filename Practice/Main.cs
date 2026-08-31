@@ -214,29 +214,70 @@
 
 // Console.WriteLine(hurjakuru.AverageHeightOfPeopleOnRide());
 
-// SimpleCollection s = new SimpleCollection("characters");
-// Console.WriteLine(s);
-
 // Console.WriteLine();
+// Console.WriteLine(hurjakuru.GetTallest().GetName());
+// Person tallest = hurjakuru.GetTallest();
+// Console.WriteLine(tallest.GetName());
+
+// SimpleCollection s = new SimpleCollection("characters");
+// Console.WriteLine("Longest: " + s.Longest());
+
 
 // s.Add("magneto");
-// Console.WriteLine(s);
-
-// Console.WriteLine();
-
 // s.Add("mystique");
-// Console.WriteLine(s);
+// s.Add("pheonix");
+
+// Console.WriteLine("Longest: " + s.Longest());
+
+// Gift book = new Gift("Harry Potter and the Philosopher's Stone", 2);
+// // Console.WriteLine("Gift's name: " + book.GetName());
+// // Console.WriteLine("Gift's weight: " + book.GetWeight());
+
+// // Console.WriteLine("Gift: " + book);
+// Package gifts = new Package();
+// gifts.AddGift(book);
+// Console.WriteLine(gifts.TotalWeight());
+
+// Room room = new Room();
+// Console.WriteLine("Empty room? " + room.IsEmpty());
+// room.Add(new Person("Franky", "", "De Cheese", "", new SimpleDate(08, 06, 2002), 175, 86));
+// room.Add(new Person("Mikey", "World", "Breaker", "", new SimpleDate(31, 10, 2002), 180, 90));
+// room.Add(new Person("Vini", "", "Outsider", "III", new SimpleDate(21, 01, 2002), 169, 90));
+// Console.WriteLine("Empty room? " + room.IsEmpty());
 
 // Console.WriteLine();
+// foreach (Person person in room.GetPersons())
+// {
+//     Console.WriteLine(person.GetName() + " (" + person.GetHeight() + " cm)");
+// }
 
-// s.Add("pheonix");
-// Console.WriteLine(s);
+// Console.WriteLine();
+// Console.WriteLine("Shortest: " + room.Shortest());
+// Console.WriteLine();
+// foreach (Person person in room.GetPersons())
+// {
+//     Console.WriteLine(person.GetName() + " (" + person.GetHeight() + " cm)");
+// }
 
-Gift book = new Gift("Harry Potter and the Philosopher's Stone", 2);
-// Console.WriteLine("Gift's name: " + book.GetName());
-// Console.WriteLine("Gift's weight: " + book.GetWeight());
+// while (!room.IsEmpty())
+// {
+//     Console.WriteLine(room.Take());
+// }
 
-// Console.WriteLine("Gift: " + book);
-Package gifts = new Package();
-gifts.AddGift(book);
-Console.WriteLine(gifts.TotalWeight());
+Item book = new Item("The Lord of the Rings", 2);
+Item phone = new Item("Nokia 3210", 1);
+Item brick = new Item("Brick", 4);
+
+Suitcase suitcase = new Suitcase(10);
+Console.WriteLine(suitcase);
+
+suitcase.AddItem(book);
+suitcase.AddItem(phone);
+suitcase.AddItem(brick);
+
+Console.WriteLine("The suitcase contains the following items:");
+suitcase.PrintItems();
+Console.WriteLine("Total weight: " + suitcase.TotalWeight() + " kg");
+
+Item heaviest = suitcase.HeaviestItem();
+Console.WriteLine("Heaviest item: " + heaviest);

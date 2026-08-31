@@ -11,6 +11,26 @@ public class SimpleCollection {
         this.collection.Add(value);
     }
 
+    public string Longest()
+    {
+        if (this.collection.Count == 0)
+        {
+            return null;
+        }
+
+        string returnString = this.collection[0];
+
+        foreach (string str in this.collection)
+        {
+            if (returnString.Length < str.Length)
+            {
+                returnString = str;
+            }
+        }
+
+        return returnString;
+    }
+
     public override string ToString() {
         string output = "The collection " + this.name + " has " + this.collection.Count + " elements:\n";
         
