@@ -30,8 +30,7 @@ public class Suitcase
         string result = "";
         foreach (Item items in this.item)
         {
-            result = items.GetName() + " (" + items.GetWeight() + " kg)\n";
-            Console.Write(result);
+            result += items.GetName() + " (" + items.GetWeight() + " kg)\n";
         }
 
         return result;
