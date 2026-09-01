@@ -1,5 +1,8 @@
 ﻿// using System;
 // using System.IO;
+Input input = new Input();
+UserInterface userInterface = new UserInterface(input);
+userInterface.Start();
 // public class Program
 // {
 //     public static void Main(string[] args)
@@ -238,6 +241,7 @@
 // gifts.AddGift(book);
 // Console.WriteLine(gifts.TotalWeight());
 
+//Room Line
 // Room room = new Room();
 // Console.WriteLine("Empty room? " + room.IsEmpty());
 // room.Add(new Person("Franky", "", "De Cheese", "", new SimpleDate(08, 06, 2002), 175, 86));
@@ -264,26 +268,27 @@
 //     Console.WriteLine(room.Take());
 // }
 
-Item book = new Item("The Lord of the Rings", 2);
-Item phone = new Item("Nokia 3210", 1);
-Item brick = new Item("Brick", 4);
+// Item integrations
+// Item book = new Item("The Lord of the Rings", 2);
+// Item phone = new Item("Nokia 3210", 1);
+// Item brick = new Item("Brick", 4);
 
-Suitcase frankyCase = new Suitcase(10);
-frankyCase.AddItem(book);
-frankyCase.AddItem(phone);
+// Suitcase frankyCase = new Suitcase(10);
+// frankyCase.AddItem(book);
+// frankyCase.AddItem(phone);
 
-Suitcase jucyCase = new Suitcase(10);
-jucyCase.AddItem(brick);
+// Suitcase jucyCase = new Suitcase(10);
+// jucyCase.AddItem(brick);
 
-Hold hold = new Hold(1000);
-hold.AddSuitcase(frankyCase);
-hold.AddSuitcase(jucyCase);
+// Hold hold = new Hold(1000);
+// hold.AddSuitcase(frankyCase);
+// hold.AddSuitcase(jucyCase);
 
-frankyCase.PrintItems();
-jucyCase.PrintItems();
+// frankyCase.PrintItems();
+// jucyCase.PrintItems();
 
-Console.WriteLine();
-Console.WriteLine(hold);
+// Console.WriteLine();
+// Console.WriteLine(hold);
 
-Console.WriteLine("The suitcases in the hold contain the following items:");
-hold.PrintItems();
+// Console.WriteLine("The suitcases in the hold contain the following items:");
+// hold.PrintItems();
