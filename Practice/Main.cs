@@ -268,16 +268,22 @@ Item book = new Item("The Lord of the Rings", 2);
 Item phone = new Item("Nokia 3210", 1);
 Item brick = new Item("Brick", 4);
 
-Suitcase suitcase = new Suitcase(10);
-Console.WriteLine(suitcase);
+Suitcase frankyCase = new Suitcase(10);
+frankyCase.AddItem(book);
+frankyCase.AddItem(phone);
 
-suitcase.AddItem(book);
-suitcase.AddItem(phone);
-suitcase.AddItem(brick);
+Suitcase jucyCase = new Suitcase(10);
+jucyCase.AddItem(brick);
 
-Console.WriteLine("The suitcase contains the following items:");
-suitcase.PrintItems();
-Console.WriteLine("Total weight: " + suitcase.TotalWeight() + " kg");
+Hold hold = new Hold(1000);
+hold.AddSuitcase(frankyCase);
+hold.AddSuitcase(jucyCase);
 
-Item heaviest = suitcase.HeaviestItem();
-Console.WriteLine("Heaviest item: " + heaviest);
+frankyCase.PrintItems();
+jucyCase.PrintItems();
+
+Console.WriteLine();
+Console.WriteLine(hold);
+
+Console.WriteLine("The suitcases in the hold contain the following items:");
+hold.PrintItems();
